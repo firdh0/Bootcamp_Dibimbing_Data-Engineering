@@ -1,0 +1,31 @@
+[0m11:34:57.790137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FDB3C460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FF977730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FF977520>]}
+
+
+============================== 11:34:57.803056 | 91c85bda-594a-4e81-bf63-181b2525472c ==============================
+[0m11:34:57.803056 [info ] [MainThread]: Running with dbt=1.9.4
+[0m11:34:57.803056 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\LEGION\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:34:57.816098 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object.. Dictionary: {'dir': WindowsPath('C:/Users/LEGION/.dbt')}
+[0m11:34:57.816098 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m11:36:36.940949 [debug] [MainThread]: Starter project path: C:\Users\LEGION\Videos\DBT\nama_environment\lib\site-packages\dbt\include\starter_project
+[0m11:36:37.057157 [info ] [MainThread]: 
+Your new dbt project "Dibimbing" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:36:37.059157 [info ] [MainThread]: Setting up your profile.
+[0m11:43:30.336426 [info ] [MainThread]: Profile Dibimbing written to C:\Users\LEGION\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:43:30.340996 [debug] [MainThread]: Command `dbt init` succeeded at 11:43:30.340996 after 512.62 seconds
+[0m11:43:30.342579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FDB3C460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FF51B0A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244FF51B430>]}
+[0m11:43:30.344578 [debug] [MainThread]: Flushing usage events
+[0m11:43:31.852511 [debug] [MainThread]: An error was encountered while trying to flush usage events

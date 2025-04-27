@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+ - name: classicmodels 
+   tables:
+     - name: orderdetails
+     - name: orders
+     - name: customers
+     - name: products

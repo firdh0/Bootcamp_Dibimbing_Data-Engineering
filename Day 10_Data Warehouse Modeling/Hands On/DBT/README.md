@@ -88,3 +88,4 @@ dbt docs serve
 ```
 http://localhost:8080
 ```
+![Alt text](./Screenshot%202025-04-27%20122226.png)

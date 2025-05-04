@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    my-app-dockerfile:
+        # membuat dari dockerfile ulang
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            - CUSTOM_NAME=my-app-dockerfile
+        ports:
+            - "5051:8080"
+
+    my-app-image:
+        # menggunakan image yang sudah ada
+        image: my-app
+        environment:
+            - CUSTOM_NAME=my-app-image
+        ports:
+            - "5052:8080"
+

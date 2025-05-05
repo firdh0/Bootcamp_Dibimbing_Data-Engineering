@@ -1,0 +1,19 @@
+2025-05-04 12:23:24,673 - __main__ - DEBUG - Ini adalah pesan debug.
+2025-05-04 12:23:24,674 - __main__ - INFO - Ini adalah pesan info.
+2025-05-04 12:23:24,674 - __main__ - WARNING - Ini adalah pesan peringatan.
+2025-05-04 12:23:24,674 - __main__ - ERROR - Ini adalah pesan kesalahan.
+2025-05-04 12:23:24,674 - __main__ - CRITICAL - Ini adalah pesan kritikal.
+2025-05-04 12:26:33,374 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: '../config/db_config.yml'
+2025-05-04 12:26:33,374 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: '../config/db_config.yml'
+2025-05-04 12:26:42,154 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:26:42,154 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:27:35,785 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:27:35,785 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:28:39,667 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:28:39,667 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:32:56,873 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:32:56,873 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: './config/db_config.yml'
+2025-05-04 12:34:16,185 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: 'C:\\Users\\LEGION\\Videos\\DIBIMBING\\config\\db_config.yml'
+2025-05-04 12:34:16,186 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: 'C:\\Users\\LEGION\\Videos\\DIBIMBING\\config\\db_config.yml'
+2025-05-04 12:34:49,596 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 12:34:49,625 - __main__ - INFO - Koneksi database berhasil ditutup.

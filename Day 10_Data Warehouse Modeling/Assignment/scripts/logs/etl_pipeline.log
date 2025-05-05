@@ -1,0 +1,620 @@
+2025-05-04 14:56:19,507 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: '../../config/db_config.yml'
+2025-05-04 14:56:19,507 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: '../../config/db_config.yml'
+2025-05-04 14:56:54,222 - __main__ - ERROR - Gagal memuat konfigurasi database: [Errno 2] No such file or directory: '../config/db_config.yml'
+2025-05-04 14:56:54,224 - __main__ - ERROR - Gagal menyambungkan ke database: [Errno 2] No such file or directory: '../config/db_config.yml'
+2025-05-04 14:57:25,668 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 14:57:25,730 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 14:58:26,688 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 14:58:26,725 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 21:39:00,473 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 21:39:00,509 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 21:43:53,205 - __main__ - INFO - Dataset 'example' memiliki null values.
+2025-05-04 21:46:31,152 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 21:46:31,218 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 21:46:35,849 - __main__ - INFO - Dataset 'example' memiliki null values.
+2025-05-04 21:46:35,862 - __main__ - INFO - Imputasi dilakukan pada kolom 'name' dari dataset 'example' menggunakan metode 'mode'.
+2025-05-04 21:46:35,865 - __main__ - INFO - Imputasi dilakukan pada kolom 'age' dari dataset 'example' menggunakan metode 'mean'.
+2025-05-04 22:00:56,233 - __main__ - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 22:00:56,233 - __main__ - ERROR - Gagal mengekstrak data: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2025-05-04 22:05:36,113 - __main__ - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 22:05:39,839 - __main__ - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 22:48:23,396 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 22:48:23,409 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 22:48:23,436 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 22:48:23,444 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 22:48:23,453 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 22:48:23,456 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 22:48:23,463 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 22:48:23,465 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 22:48:23,465 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 22:48:23,465 - __main__ - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 22:48:23,477 - __main__ - INFO - Data berhasil disimpan setelah transformasi.
+2025-05-04 23:08:55,512 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:08:55,564 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:08:55,605 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:08:55,650 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:08:55,677 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:08:55,709 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:08:55,709 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:08:55,726 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:08:55,733 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:08:55,735 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:08:55,739 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:08:55,742 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:08:55,743 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:08:55,745 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:08:55,748 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:08:55,761 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:08:55,794 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-04 23:08:55,794 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:08:55,794 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:08:55,797 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:10:59,947 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:10:59,979 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:11:00,011 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:11:00,036 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:11:00,061 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:11:00,090 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:11:00,098 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:11:00,115 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:11:00,123 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:11:00,125 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:11:00,128 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:11:00,130 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:11:00,131 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:11:00,133 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:11:00,136 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:11:00,148 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:11:00,161 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-04 23:11:00,161 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:11:00,162 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:11:00,162 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:12:41,245 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:12:41,277 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:12:41,314 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:12:41,330 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:12:41,352 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:12:41,381 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:12:41,381 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:12:41,399 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:12:41,402 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:12:41,405 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:12:41,407 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:12:41,407 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:12:41,407 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:12:41,407 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:12:41,415 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:12:41,427 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:12:41,431 - scripts.etl.load - ERROR - Gagal memuat data dimensi: time data "26-04-2025" doesn't match format "%Y-%m-%d", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-05-04 23:12:41,431 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:12:41,431 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:12:41,431 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:14:12,201 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:14:12,245 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:14:12,274 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:14:12,291 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:14:12,315 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:14:12,351 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:14:12,351 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:14:12,359 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:14:12,368 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:14:12,370 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:14:12,372 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:14:12,372 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:14:12,374 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:14:12,376 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:14:12,378 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:14:12,391 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:14:12,396 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-04 23:14:12,396 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:14:12,396 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:14:12,396 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:21:38,019 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:21:38,054 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:21:38,080 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:21:38,095 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:21:38,118 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:21:38,158 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:21:38,167 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:21:38,179 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:21:38,183 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:21:38,186 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:21:38,188 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:21:38,190 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:21:38,191 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:21:38,192 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:21:38,194 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:21:38,205 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:21:38,226 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-04 23:21:38,226 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:21:38,226 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:21:38,226 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:22:39,923 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-04 23:22:39,952 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:22:39,984 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-04 23:22:40,001 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-04 23:22:40,023 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-04 23:22:40,058 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-04 23:22:40,062 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-04 23:22:40,064 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-04 23:22:40,076 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-04 23:22:40,076 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:22:40,079 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-04 23:22:40,080 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:22:40,080 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-04 23:22:40,084 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-04 23:22:40,084 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-04 23:22:40,094 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-04 23:22:40,105 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-04 23:22:40,105 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-04 23:22:40,105 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-04 23:22:40,109 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:27:18,098 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:27:18,133 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:27:18,167 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:27:18,189 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:27:18,248 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:27:18,352 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:27:18,366 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:27:18,393 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:27:18,400 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:27:18,404 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:27:18,410 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:27:18,414 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:27:18,414 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:27:18,418 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:27:18,422 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:27:18,439 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:27:18,453 - scripts.etl.load - ERROR - Gagal memuat data dimensi: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-05 07:27:18,453 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-05 07:27:18,453 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:27:18,453 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:33:25,040 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:33:25,082 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:33:25,125 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:33:25,150 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:33:25,188 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:33:25,219 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:33:25,225 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:33:25,242 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:33:25,242 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:33:25,255 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:33:25,287 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:33:25,290 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:33:25,298 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:33:25,298 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:33:25,302 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:33:25,310 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:33:25,321 - scripts.etl.load - ERROR - Gagal memasukkan artikel https://www.bbc.com/news/articles/ce8gpdj704mo: there is no unique or exclusion constraint matching the ON CONFLICT specification
+
+2025-05-05 07:33:25,321 - scripts.etl.load - ERROR - Gagal memuat data dimensi: current transaction is aborted, commands ignored until end of transaction block
+
+2025-05-05 07:33:25,321 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-05 07:33:25,321 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:33:25,321 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:34:39,406 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:34:39,441 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:34:39,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:34:39,478 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:34:39,509 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:34:39,544 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:34:39,548 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:34:39,557 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:34:39,561 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:34:39,561 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:34:39,565 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:34:39,568 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:34:39,570 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:34:39,571 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:34:39,571 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:34:39,584 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:34:39,608 - scripts.etl.load - ERROR - Gagal memuat data dimensi: function pg_catalog.extract(unknown, unknown) is not unique
+LINE 3:                         SELECT NULL, EXTRACT(DAY FROM NULL),...
+                                             ^
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.
+
+2025-05-05 07:34:39,611 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-05 07:34:39,611 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:34:39,611 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:35:34,640 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:35:34,675 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:35:34,705 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:35:34,717 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:35:34,746 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:35:34,784 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:35:34,784 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:35:34,784 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:35:34,804 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:35:34,806 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:35:34,808 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:35:34,810 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:35:34,810 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:35:34,815 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:35:34,817 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:35:34,830 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:35:34,903 - scripts.etl.load - ERROR - Gagal memuat data dimensi: 'NoneType' object has no attribute 'split'
+2025-05-05 07:35:34,905 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-05 07:35:34,906 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:35:34,906 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:36:14,962 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:36:15,004 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:36:15,037 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:36:15,066 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:36:15,103 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:36:15,160 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:36:15,169 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:36:15,195 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:36:15,207 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:36:15,213 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:36:15,220 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:36:15,225 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:36:15,229 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:36:15,234 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:36:15,235 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:36:15,246 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:36:15,661 - scripts.etl.load - ERROR - Gagal memuat data dimensi: null value in column "description" of relation "dim_article" violates not-null constraint
+DETAIL:  Failing row contains (82, Sumy attack: BBC visits scene of Russian strikes, null, https://www.bbc.com/news/videos/c5yg90mpz0qo).
+
+2025-05-05 07:36:15,661 - __main__ - ERROR - Proses pemuatan ke tabel dimensi gagal. Keluar dari pipeline.
+2025-05-05 07:36:15,661 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:36:15,661 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:37:28,988 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:37:29,019 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:37:29,044 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:37:29,061 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:37:29,090 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:37:29,123 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:37:29,130 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:37:29,149 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:37:29,157 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:37:29,161 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:37:29,164 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:37:29,167 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:37:29,169 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:37:29,171 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:37:29,174 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:37:29,187 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:37:34,442 - scripts.etl.load - INFO - Data dimensi berhasil dimuat.
+2025-05-05 07:37:34,442 - scripts.etl.load - ERROR - Gagal memuat data fakta: 'NoneType' object is not subscriptable
+2025-05-05 07:37:34,442 - __main__ - ERROR - Proses pemuatan ke tabel fakta gagal. Keluar dari pipeline.
+2025-05-05 07:37:34,458 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:37:34,460 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:38:59,720 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:38:59,749 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:38:59,774 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:38:59,788 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:38:59,814 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:38:59,862 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:38:59,869 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:38:59,880 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:38:59,882 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:38:59,885 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:38:59,888 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:38:59,890 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:38:59,891 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:38:59,891 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:38:59,895 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:38:59,908 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:39:08,032 - scripts.etl.load - INFO - Data dimensi berhasil dimuat.
+2025-05-05 07:39:08,050 - scripts.etl.load - ERROR - Gagal memuat data fakta: duplicate key value violates unique constraint "fact_news_pkey"
+DETAIL:  Key (news_id, date_id, category_id, source_category_id, tag_id)=(1, 1, 1, 1, 1) already exists.
+
+2025-05-05 07:39:08,051 - __main__ - ERROR - Proses pemuatan ke tabel fakta gagal. Keluar dari pipeline.
+2025-05-05 07:39:08,053 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:39:08,076 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:40:45,129 - __main__ - INFO - Konfigurasi berhasil dimuat.
+2025-05-05 07:40:45,157 - scripts.utils.db_connection - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:40:45,177 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-05 07:40:45,198 - scripts.etl.extract - INFO - Data berhasil diekstrak dari CSV.
+2025-05-05 07:40:45,223 - scripts.etl.extract - INFO - Data berhasil disimpan ke staging area (./data/processed/staging_data.parquet).
+2025-05-05 07:40:45,252 - scripts.etl.transform - INFO - Data berhasil dibaca dari staging area.
+2025-05-05 07:40:45,252 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki 2530 baris duplikat.
+2025-05-05 07:40:45,260 - scripts.utils.data_quality - INFO - Menghapus duplikat dari dataset 'bbc_df'.
+2025-05-05 07:40:45,276 - scripts.utils.data_quality - INFO - Dataset 'bbc_df' memiliki null values.
+2025-05-05 07:40:45,281 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'description' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:40:45,282 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'updated' dari dataset 'bbc_df' menggunakan metode 'interpolate'.
+2025-05-05 07:40:45,282 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'category' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:40:45,286 - scripts.utils.data_quality - INFO - Kolom 'image' pada dataset 'bbc_df' telah di-drop karena persentase null (80.9205020920502%) melebihi threshold.
+2025-05-05 07:40:45,287 - scripts.utils.data_quality - INFO - Imputasi dilakukan pada kolom 'tags' dari dataset 'bbc_df' menggunakan metode 'mode'.
+2025-05-05 07:40:45,289 - scripts.etl.transform - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-05-05 07:40:45,299 - __main__ - INFO - Data berhasil di-transformasi dan disimpan.
+2025-05-05 07:40:50,437 - scripts.etl.load - INFO - Data dimensi berhasil dimuat.
+2025-05-05 07:40:50,437 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,501 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,501 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,523 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,529 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,529 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,532 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,532 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,532 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,535 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,535 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,565 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,616 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,642 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,668 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,685 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,717 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,757 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,782 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,785 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,806 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,856 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,895 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,936 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:50,969 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:50,992 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,035 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,082 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,537 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,537 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,537 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,537 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,580 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,586 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,589 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,589 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,611 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,611 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,627 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,627 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,649 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,664 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,666 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,666 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,672 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/cgkm03lplr6o' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,698 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,698 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,705 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,706 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,744 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,746 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,747 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,747 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,783 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,785 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,785 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,785 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,818 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,818 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,822 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,822 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,851 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,855 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,857 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,857 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,893 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,897 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,897 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,897 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,930 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,930 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,935 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,935 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,972 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:51,973 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,973 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:51,973 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:53,607 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/world-middle-east-67614911' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,169 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/explainers-51047186' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,205 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,220 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,248 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,253 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,270 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,281 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,307 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,309 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,317 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,335 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,372 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,372 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,411 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,414 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,443 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,480 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,514 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,514 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,546 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,555 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,588 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,596 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,631 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:54,639 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,240 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,240 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,240 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,240 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,273 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,273 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,273 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,273 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,326 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,326 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,326 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,326 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,368 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,368 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,368 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,368 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,405 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,405 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,405 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,405 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,439 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,446 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,446 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,446 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,479 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,479 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,479 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,479 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,521 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,521 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,521 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,521 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,564 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,564 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,564 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,568 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,604 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,604 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,604 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,604 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,647 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,647 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,647 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,647 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,689 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,689 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,689 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,689 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,689 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,701 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,707 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,710 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,727 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,727 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,735 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,759 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,761 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,767 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,773 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,784 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,784 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,789 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,797 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/ce98y47515jo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,809 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,811 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,815 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,820 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,835 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,835 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,838 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,847 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,859 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,867 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,869 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,876 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,885 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,885 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,893 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,918 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,921 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,926 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,929 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,938 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,942 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,947 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,976 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,976 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,984 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:55,989 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,997 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:55,997 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,006 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,034 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,034 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,038 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,042 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,051 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,051 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,060 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,097 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,097 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,101 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,106 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,117 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,118 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,123 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,151 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,151 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,151 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,160 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,168 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,172 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,177 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,209 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,209 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,209 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,216 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,226 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,226 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,235 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,259 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,259 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,268 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,268 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,285 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,288 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,292 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,318 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,320 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,326 - scripts.etl.load - WARNING - Baris tanpa tanggal di fact_news dilewati.
+2025-05-05 07:40:56,329 - scripts.etl.load - WARNING - Article URL 'https://www.bbc.com/news/videos/c86p3849j5zo' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,339 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,339 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,347 - scripts.etl.load - WARNING - Kategori 'None' tidak ditemukan, baris dilewati.
+2025-05-05 07:40:56,353 - scripts.etl.load - INFO - Data fakta berhasil dimuat.
+2025-05-05 07:40:56,356 - scripts.utils.db_connection - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:40:56,356 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-05 07:40:56,357 - __main__ - INFO - Proses ETL berhasil selesai.

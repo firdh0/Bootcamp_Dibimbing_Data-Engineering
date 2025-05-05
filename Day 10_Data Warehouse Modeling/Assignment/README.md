@@ -8,6 +8,9 @@ This project is an implementation of an **ETL (Extract, Transform, Load)** pipel
 
 > 🧩 **Connected via**: DBeaver (a powerful database management tool for developers and analysts)
 
+## ⭐ Database Star Schema Design
+![dim_category Table](./images/Schema%20Database-Star%20Schema.drawio.png)
+
 ## 📁 Project Structure
 
 The project is organized as follows:

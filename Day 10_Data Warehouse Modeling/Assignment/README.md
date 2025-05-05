@@ -118,9 +118,6 @@ pip install -r requirements.txt
 ```
 
 ---
-Berikut bagian akhir dokumentasi Anda yang sudah saya sesuaikan agar **menampilkan contoh output dalam bentuk gambar**, dengan placeholder path gambar yang bisa Anda ganti sendiri:
-
----
 
 ## 📊 Example Output
 

@@ -28,7 +28,7 @@ The project is organized as follows:
 
 ## ✨ Features
 
-* 📤 **Extract**: Read raw data from sources and write to Parquet (`extracted/staging_data.parquet`).
+* 📤 **Extract**: Read data from data warehouse and write to Parquet (`extracted/staging_data.parquet`).
 * 🧹 **Transform**: Clean, normalize, and enrich the data; output saved to `transformed/transformed_data.parquet`.
 * 🧾 **Logging**: Record pipeline steps and errors in `logs/etl_pipeline.log`.
 * 📓 **Interactive Notebook**: `etl.ipynb` for data exploration and ad hoc transformations.

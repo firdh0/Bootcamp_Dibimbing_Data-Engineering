@@ -1,0 +1,512 @@
+2025-05-12 12:25:58,198 - __main__ - DEBUG - Ini adalah pesan debug.
+2025-05-12 12:25:58,198 - __main__ - INFO - Ini adalah pesan info.
+2025-05-12 12:25:58,199 - __main__ - WARNING - Ini adalah pesan peringatan.
+2025-05-12 12:25:58,200 - __main__ - ERROR - Ini adalah pesan kesalahan.
+2025-05-12 12:25:58,201 - __main__ - CRITICAL - Ini adalah pesan kritikal.
+2025-05-12 12:27:28,218 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-12 12:27:28,218 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-12 12:27:28,264 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-12 12:27:28,264 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-12 12:29:21,605 - __main__ - INFO - Dataset 'example' memiliki null values.
+2025-05-12 12:29:21,605 - __main__ - INFO - Dataset 'example' memiliki null values.
+2025-05-12 12:29:21,605 - __main__ - INFO - Dataset 'example' memiliki null values.
+2025-05-12 12:29:21,611 - __main__ - INFO - Imputasi dilakukan pada kolom 'name' dari dataset 'example' menggunakan metode 'mode'.
+2025-05-12 12:29:21,611 - __main__ - INFO - Imputasi dilakukan pada kolom 'name' dari dataset 'example' menggunakan metode 'mode'.
+2025-05-12 12:29:21,611 - __main__ - INFO - Imputasi dilakukan pada kolom 'name' dari dataset 'example' menggunakan metode 'mode'.
+2025-05-12 12:29:21,616 - __main__ - INFO - Imputasi dilakukan pada kolom 'age' dari dataset 'example' menggunakan metode 'mean'.
+2025-05-12 12:29:21,616 - __main__ - INFO - Imputasi dilakukan pada kolom 'age' dari dataset 'example' menggunakan metode 'mean'.
+2025-05-12 12:29:21,616 - __main__ - INFO - Imputasi dilakukan pada kolom 'age' dari dataset 'example' menggunakan metode 'mean'.
+2025-05-13 09:46:39,356 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:46:39,356 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:46:39,356 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:46:39,543 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:46:39,543 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:46:39,543 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:46:39,547 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:46:39,547 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:46:39,547 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,414 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:50:40,414 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:50:40,414 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:50:40,414 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:50:40,414 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:50:40,581 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:50:40,581 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:50:40,581 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:50:40,581 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:50:40,581 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:50:40,588 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,588 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,588 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,588 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,588 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:50:40,666 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:50:40,666 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:50:40,666 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:50:40,666 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:50:40,666 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,315 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,407 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,415 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:51:51,434 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,110 - __main__ - ERROR - Gagal memuat konfigurasi database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,122 - __main__ - ERROR - Gagal menyambungkan ke database: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,134 - __main__ - ERROR - Gagal mengekstrak data: unhashable type: 'dict'
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:53:45,146 - __main__ - ERROR - Tidak ada data yang diekstrak.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,466 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,570 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:57:48,584 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,403 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,500 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,515 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 09:58:27,540 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,711 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,830 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,845 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:03,865 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,389 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,469 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,488 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:06:08,514 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:10:57,469 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 10:10:57,540 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 10:10:57,540 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 10:10:57,549 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 10:24:46,139 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:24:46,165 - __main__ - ERROR - Gagal mentransformasi data: 'updated'
+2025-05-13 10:28:42,658 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:29:25,545 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:29:25,576 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 10:30:43,072 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:30:43,109 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 10:38:31,283 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:38:31,285 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 10:38:31,291 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 10:38:31,320 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 10:39:44,159 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 10:39:44,163 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 10:39:44,169 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 10:39:44,205 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:08:36,297 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:08:36,385 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 11:08:36,385 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:08:36,398 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 11:08:40,062 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:08:40,156 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 11:08:40,156 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:08:40,166 - __main__ - INFO - Data berhasil disimpan ke staging area (./extracted/staging_data.parquet).
+2025-05-13 11:25:21,968 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:25:22,041 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:25:22,105 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:25:22,184 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: (psycopg2.errors.NotNullViolation) null value in column "processed_date" of relation "dim_cleaned" violates not-null constraint
+DETAIL:  Failing row contains (1, Trump's tariffs are a huge blow to Vietnam's economic ambitions, Asia, 2025-04-26 00:00:00, https://www.bbc.com/news/articles/crm332189djo, US exports have driven the economic success of countries like Vi..., null).
+
+[SQL: INSERT INTO dim_cleaned (title, category, publication_date, url, summary) VALUES (%(title__0)s, %(category__0)s, %(publication_date__0)s, %(url__0)s, %(summary__0)s), (%(title__1)s, %(category__1)s, %(publication_date__1)s, %(url__1)s, %(summary__1)s ... 95179 characters truncated ... 8)s), (%(title__999)s, %(category__999)s, %(publication_date__999)s, %(url__999)s, %(summary__999)s)]
+[parameters: {'url__0': 'https://www.bbc.com/news/articles/crm332189djo', 'title__0': "Trump's tariffs are a huge blow to Vietnam's economic ambitions", 'publication_date__0': datetime.date(2025, 4, 26), 'summary__0': 'US exports have driven the economic success of countries like Vietnam and Cambodia.', 'category__0': 'Asia', 'url__1': 'https://www.bbc.com/news/articles/c5yg2y21yq5o', 'title__1': 'Trump administration proposes State Department cuts in major overhaul', 'publication_date__1': datetime.date(2025, 4, 22), 'summary__1': 'The cuts involve some 130 of the more than 700 agency offices within the State Department.', 'category__1': 'US & Canada', 'url__2': 'https://www.bbc.com/news/articles/cg41qg74y04o', 'title__2': "Nigeria's spectacular horse parade closing Ramadan", 'publication_date__2': datetime.date(2025, 4, 26), 'summary__2': 'In the city of Dutse, thousands filled the streets to celebrate a centuries-old festival.', 'category__2': 'Africa', 'url__3': 'https://www.bbc.com/news/articles/c4g7wdw9jvno', 'title__3': "Zelensky accuses Trump's envoy of spreading 'Russian narratives'", 'publication_date__3': datetime.date(2025, 4, 26), 'summary__3': 'Steve Witkoff appeared to suggest that a peace deal hinged on the status of five Ukrainian regions.', 'category__3': 'Europe', 'url__4': 'https://www.bbc.com/news/articles/cvglwd34l81o', 'title__4': "Landslides kill at least 10 in Brazil's Minas Gerais state", 'publication_date__4': datetime.date(2025, 4, 26), 'summary__4': 'The landslides were triggered by torrential rain which fell in the city in the early hours of Sunday.', 'category__4': 'Latin America', 'url__5': 'https://www.bbc.com/news/64836315', 'title__5': 'Why more parents are losing child benefit', 'publication_date__5': datetime.date(2025, 4, 26), 'summary__5': 'More parents are losing child benefit because the threshold at which it starts being withdrawn has not changed in 10 years.', 'category__5': 'Reality Check', 'url__6': 'https://www.bbc.com/news/videos/c14xldg3mjvo', 'title__6': "Why Trump's tariffs aren't really reciprocal", 'publication_date__6': datetime.date(2025, 4, 26), 'summary__6': "BBC Verify's Ben Chu takes a look at the wide range of different tariffs being imposed on countries.", 'category__6': 'US & Canada', 'url__7': 'https://www.bbc.com/news/articles/c175z14r8pro', 'title__7': "Anti-Hamas protests on rise in Gaza as group's iron grip slips", 'publication_date__7': datetime.date(2025, 4, 24), 'summary__7': 'Gazan civilians are losing their fear of Hamas, openly criticising the group on the streets and online.', 'category__7': 'Middle East', 'url__8': 'https://www.bbc.com/news/articles/crm3x27vw70o', 'title__8': 'Migrant tents removed from Guantanamo bay, satellite images show', 'publication_date__8': datetime.date(2025, 4, 26), 'summary__8': "Some 175 tents raised as part of an expansion to the base's migrant detention centre have been removed.", 'category__8': 'World', 'url__9': 'https://www.bbc.com/news/videos/c9qwl3n7ljyo', 'title__9': "How Trump's tariffs may impact India", 'publication_date__9': datetime.date(2025, 4, 26), 'summary__9': "The BBC's Nikhil Inamdar explains how US President Donald Trump's tariffs could impact India.", 'category__9': 'Asia' ... 4900 parameters truncated ... 'url__990': 'https://www.bbc.com/news/articles/cpv4974k27wo', 'title__990': "Musk's X is suing India, as Tesla and Starlink plan entry", 'publication_date__990': datetime.date(2025, 4, 26), 'summary__990': 'X says a new government portal gives officials wide-ranging powers to issue blocking orders.', 'category__990': 'Asia', 'url__991': 'https://www.bbc.com/news/articles/ckgezj14w80o', 'title__991': "Saving Ireland's thatched cottages", 'publication_date__991': datetime.date(2025, 4, 19), 'summary__991': 'The number of thatched houses in the Republic of Ireland is dwindling but new classes are training up the next generation of thatchers.', 'category__991': 'Europe', 'url__992': 'https://www.bbc.com/news/articles/clyz65p1k45o', 'title__992': 'Children routinely using social media, Australian regulator says', 'publication_date__992': datetime.date(2025, 4, 26), 'summary__992': 'It found they were easily able to bypass age checks on apps, which face being banned for under-16s.', 'category__992': 'Australia', 'url__993': 'https://www.bbc.com/news/videos/cn4yzywpy72o', 'title__993': 'Moment man vandalises ancient Incan artefact', 'publication_date__993': datetime.date(2025, 4, 26), 'summary__993': "Peruvian police released footage showing a suspect pounding Cusco's 12-Angle Stone.", 'category__993': 'Latin America', 'url__994': 'https://www.bbc.com/news/articles/cpwrg0kr85ko', 'title__994': 'McQueen explores century of protest photography', 'publication_date__994': datetime.date(2025, 4, 26), 'summary__994': 'Resistance will be shown at the Turner Contemporary gallery in Margate from 22 February.', 'category__994': 'In Pictures', 'url__995': 'https://www.bbc.com/news/articles/cg70pprzegyo', 'title__995': "India's rivers are home to 6,000 dolphins - but they are in trouble", 'publication_date__995': datetime.date(2025, 4, 26), 'summary__995': 'Gangetic and Indus river dolphins are found in over two-dozen rivers in India.', 'category__995': 'Asia', 'url__996': 'https://www.bbc.com/news/articles/c14x524g1g8o', 'title__996': 'Pope wanted to work until the end, archbishop tells BBC', 'publication_date__996': datetime.date(2025, 4, 25), 'summary__996': 'In an exclusive interview with the BBC, Archbishop Paul Gallagher says Pope Francis preferred to "die with his boots on".', 'category__996': 'Europe', 'url__997': 'https://www.bbc.com/news/articles/c78jnxe7yw4o', 'title__997': 'Photographer over the moon with lunar mountain shot', 'publication_date__997': datetime.date(2025, 4, 26), 'summary__997': 'Tony Harnett says the shot, taken from six miles away, has taken years to capture perfectly.', 'category__997': 'Wales', 'url__998': 'https://www.bbc.com/news/articles/cq5zxe5l58go', 'title__998': 'Israeli air strike kills top Hamas official in Gaza', 'publication_date__998': datetime.date(2025, 4, 26), 'summary__998': 'Salah al-Bardaweel and his wife died in the southern city of Khan Younis, a Hamas source told the BBC.', 'category__998': 'Middle East', 'url__999': 'https://www.bbc.com/news/articles/cn0jrkv7k29o', 'title__999': 'Teen armed with gun overpowered by passengers onboard plane', 'publication_date__999': datetime.date(2025, 4, 26), 'summary__999': 'A 17-year-old has been charged after being detained by crew and members of the public on a plane in Australia.', 'category__999': 'Australia'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-13 11:25:22,188 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:25:22,188 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:28:11,791 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:28:11,797 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:28:11,804 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:28:11,844 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:31:55,215 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:31:55,222 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:31:55,226 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:31:55,248 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:32:42,474 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:32:42,491 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:32:42,499 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:32:42,540 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:32:50,748 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:32:50,824 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:32:50,831 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:32:51,039 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: (psycopg2.errors.NotNullViolation) null value in column "processed_date" of relation "dim_cleaned" violates not-null constraint
+DETAIL:  Failing row contains (2, Trump's tariffs are a huge blow to Vietnam's economic ambitions, Asia, 2025-04-26 00:00:00, https://www.bbc.com/news/articles/crm332189djo, US exports have driven the economic success of countries like Vi..., null).
+
+[SQL: INSERT INTO dim_cleaned (title, category, publication_date, url, summary) VALUES (%(title__0)s, %(category__0)s, %(publication_date__0)s, %(url__0)s, %(summary__0)s), (%(title__1)s, %(category__1)s, %(publication_date__1)s, %(url__1)s, %(summary__1)s ... 95179 characters truncated ... 8)s), (%(title__999)s, %(category__999)s, %(publication_date__999)s, %(url__999)s, %(summary__999)s)]
+[parameters: {'url__0': 'https://www.bbc.com/news/articles/crm332189djo', 'title__0': "Trump's tariffs are a huge blow to Vietnam's economic ambitions", 'publication_date__0': datetime.date(2025, 4, 26), 'summary__0': 'US exports have driven the economic success of countries like Vietnam and Cambodia.', 'category__0': 'Asia', 'url__1': 'https://www.bbc.com/news/articles/c5yg2y21yq5o', 'title__1': 'Trump administration proposes State Department cuts in major overhaul', 'publication_date__1': datetime.date(2025, 4, 22), 'summary__1': 'The cuts involve some 130 of the more than 700 agency offices within the State Department.', 'category__1': 'US & Canada', 'url__2': 'https://www.bbc.com/news/articles/cg41qg74y04o', 'title__2': "Nigeria's spectacular horse parade closing Ramadan", 'publication_date__2': datetime.date(2025, 4, 26), 'summary__2': 'In the city of Dutse, thousands filled the streets to celebrate a centuries-old festival.', 'category__2': 'Africa', 'url__3': 'https://www.bbc.com/news/articles/c4g7wdw9jvno', 'title__3': "Zelensky accuses Trump's envoy of spreading 'Russian narratives'", 'publication_date__3': datetime.date(2025, 4, 26), 'summary__3': 'Steve Witkoff appeared to suggest that a peace deal hinged on the status of five Ukrainian regions.', 'category__3': 'Europe', 'url__4': 'https://www.bbc.com/news/articles/cvglwd34l81o', 'title__4': "Landslides kill at least 10 in Brazil's Minas Gerais state", 'publication_date__4': datetime.date(2025, 4, 26), 'summary__4': 'The landslides were triggered by torrential rain which fell in the city in the early hours of Sunday.', 'category__4': 'Latin America', 'url__5': 'https://www.bbc.com/news/64836315', 'title__5': 'Why more parents are losing child benefit', 'publication_date__5': datetime.date(2025, 4, 26), 'summary__5': 'More parents are losing child benefit because the threshold at which it starts being withdrawn has not changed in 10 years.', 'category__5': 'Reality Check', 'url__6': 'https://www.bbc.com/news/videos/c14xldg3mjvo', 'title__6': "Why Trump's tariffs aren't really reciprocal", 'publication_date__6': datetime.date(2025, 4, 26), 'summary__6': "BBC Verify's Ben Chu takes a look at the wide range of different tariffs being imposed on countries.", 'category__6': 'US & Canada', 'url__7': 'https://www.bbc.com/news/articles/c175z14r8pro', 'title__7': "Anti-Hamas protests on rise in Gaza as group's iron grip slips", 'publication_date__7': datetime.date(2025, 4, 24), 'summary__7': 'Gazan civilians are losing their fear of Hamas, openly criticising the group on the streets and online.', 'category__7': 'Middle East', 'url__8': 'https://www.bbc.com/news/articles/crm3x27vw70o', 'title__8': 'Migrant tents removed from Guantanamo bay, satellite images show', 'publication_date__8': datetime.date(2025, 4, 26), 'summary__8': "Some 175 tents raised as part of an expansion to the base's migrant detention centre have been removed.", 'category__8': 'World', 'url__9': 'https://www.bbc.com/news/videos/c9qwl3n7ljyo', 'title__9': "How Trump's tariffs may impact India", 'publication_date__9': datetime.date(2025, 4, 26), 'summary__9': "The BBC's Nikhil Inamdar explains how US President Donald Trump's tariffs could impact India.", 'category__9': 'Asia' ... 4900 parameters truncated ... 'url__990': 'https://www.bbc.com/news/articles/cpv4974k27wo', 'title__990': "Musk's X is suing India, as Tesla and Starlink plan entry", 'publication_date__990': datetime.date(2025, 4, 26), 'summary__990': 'X says a new government portal gives officials wide-ranging powers to issue blocking orders.', 'category__990': 'Asia', 'url__991': 'https://www.bbc.com/news/articles/ckgezj14w80o', 'title__991': "Saving Ireland's thatched cottages", 'publication_date__991': datetime.date(2025, 4, 19), 'summary__991': 'The number of thatched houses in the Republic of Ireland is dwindling but new classes are training up the next generation of thatchers.', 'category__991': 'Europe', 'url__992': 'https://www.bbc.com/news/articles/clyz65p1k45o', 'title__992': 'Children routinely using social media, Australian regulator says', 'publication_date__992': datetime.date(2025, 4, 26), 'summary__992': 'It found they were easily able to bypass age checks on apps, which face being banned for under-16s.', 'category__992': 'Australia', 'url__993': 'https://www.bbc.com/news/videos/cn4yzywpy72o', 'title__993': 'Moment man vandalises ancient Incan artefact', 'publication_date__993': datetime.date(2025, 4, 26), 'summary__993': "Peruvian police released footage showing a suspect pounding Cusco's 12-Angle Stone.", 'category__993': 'Latin America', 'url__994': 'https://www.bbc.com/news/articles/cpwrg0kr85ko', 'title__994': 'McQueen explores century of protest photography', 'publication_date__994': datetime.date(2025, 4, 26), 'summary__994': 'Resistance will be shown at the Turner Contemporary gallery in Margate from 22 February.', 'category__994': 'In Pictures', 'url__995': 'https://www.bbc.com/news/articles/cg70pprzegyo', 'title__995': "India's rivers are home to 6,000 dolphins - but they are in trouble", 'publication_date__995': datetime.date(2025, 4, 26), 'summary__995': 'Gangetic and Indus river dolphins are found in over two-dozen rivers in India.', 'category__995': 'Asia', 'url__996': 'https://www.bbc.com/news/articles/c14x524g1g8o', 'title__996': 'Pope wanted to work until the end, archbishop tells BBC', 'publication_date__996': datetime.date(2025, 4, 25), 'summary__996': 'In an exclusive interview with the BBC, Archbishop Paul Gallagher says Pope Francis preferred to "die with his boots on".', 'category__996': 'Europe', 'url__997': 'https://www.bbc.com/news/articles/c78jnxe7yw4o', 'title__997': 'Photographer over the moon with lunar mountain shot', 'publication_date__997': datetime.date(2025, 4, 26), 'summary__997': 'Tony Harnett says the shot, taken from six miles away, has taken years to capture perfectly.', 'category__997': 'Wales', 'url__998': 'https://www.bbc.com/news/articles/cq5zxe5l58go', 'title__998': 'Israeli air strike kills top Hamas official in Gaza', 'publication_date__998': datetime.date(2025, 4, 26), 'summary__998': 'Salah al-Bardaweel and his wife died in the southern city of Khan Younis, a Hamas source told the BBC.', 'category__998': 'Middle East', 'url__999': 'https://www.bbc.com/news/articles/cn0jrkv7k29o', 'title__999': 'Teen armed with gun overpowered by passengers onboard plane', 'publication_date__999': datetime.date(2025, 4, 26), 'summary__999': 'A 17-year-old has been charged after being detained by crew and members of the public on a plane in Australia.', 'category__999': 'Australia'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-13 11:32:51,042 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:32:51,044 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:33:36,831 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:33:36,836 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:33:36,842 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:33:36,875 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:33:40,520 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:33:40,525 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:33:40,529 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:33:40,564 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:34:25,220 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:34:25,287 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:34:25,291 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: syntax error at or near ")"
+LINE 10:                 );
+                         ^
+
+2025-05-13 11:34:25,292 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:34:25,294 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:37:53,460 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:37:53,517 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:37:53,526 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:37:53,636 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: (psycopg2.errors.NotNullViolation) null value in column "processed_date" of relation "dim_cleaned" violates not-null constraint
+DETAIL:  Failing row contains (3, Trump's tariffs are a huge blow to Vietnam's economic ambitions, Asia, 2025-04-26 00:00:00, https://www.bbc.com/news/articles/crm332189djo, US exports have driven the economic success of countries like Vi..., null).
+
+[SQL: INSERT INTO dim_cleaned (title, category, publication_date, url, summary) VALUES (%(title__0)s, %(category__0)s, %(publication_date__0)s, %(url__0)s, %(summary__0)s), (%(title__1)s, %(category__1)s, %(publication_date__1)s, %(url__1)s, %(summary__1)s ... 95179 characters truncated ... 8)s), (%(title__999)s, %(category__999)s, %(publication_date__999)s, %(url__999)s, %(summary__999)s)]
+[parameters: {'url__0': 'https://www.bbc.com/news/articles/crm332189djo', 'title__0': "Trump's tariffs are a huge blow to Vietnam's economic ambitions", 'publication_date__0': datetime.date(2025, 4, 26), 'summary__0': 'US exports have driven the economic success of countries like Vietnam and Cambodia.', 'category__0': 'Asia', 'url__1': 'https://www.bbc.com/news/articles/c5yg2y21yq5o', 'title__1': 'Trump administration proposes State Department cuts in major overhaul', 'publication_date__1': datetime.date(2025, 4, 22), 'summary__1': 'The cuts involve some 130 of the more than 700 agency offices within the State Department.', 'category__1': 'US & Canada', 'url__2': 'https://www.bbc.com/news/articles/cg41qg74y04o', 'title__2': "Nigeria's spectacular horse parade closing Ramadan", 'publication_date__2': datetime.date(2025, 4, 26), 'summary__2': 'In the city of Dutse, thousands filled the streets to celebrate a centuries-old festival.', 'category__2': 'Africa', 'url__3': 'https://www.bbc.com/news/articles/c4g7wdw9jvno', 'title__3': "Zelensky accuses Trump's envoy of spreading 'Russian narratives'", 'publication_date__3': datetime.date(2025, 4, 26), 'summary__3': 'Steve Witkoff appeared to suggest that a peace deal hinged on the status of five Ukrainian regions.', 'category__3': 'Europe', 'url__4': 'https://www.bbc.com/news/articles/cvglwd34l81o', 'title__4': "Landslides kill at least 10 in Brazil's Minas Gerais state", 'publication_date__4': datetime.date(2025, 4, 26), 'summary__4': 'The landslides were triggered by torrential rain which fell in the city in the early hours of Sunday.', 'category__4': 'Latin America', 'url__5': 'https://www.bbc.com/news/64836315', 'title__5': 'Why more parents are losing child benefit', 'publication_date__5': datetime.date(2025, 4, 26), 'summary__5': 'More parents are losing child benefit because the threshold at which it starts being withdrawn has not changed in 10 years.', 'category__5': 'Reality Check', 'url__6': 'https://www.bbc.com/news/videos/c14xldg3mjvo', 'title__6': "Why Trump's tariffs aren't really reciprocal", 'publication_date__6': datetime.date(2025, 4, 26), 'summary__6': "BBC Verify's Ben Chu takes a look at the wide range of different tariffs being imposed on countries.", 'category__6': 'US & Canada', 'url__7': 'https://www.bbc.com/news/articles/c175z14r8pro', 'title__7': "Anti-Hamas protests on rise in Gaza as group's iron grip slips", 'publication_date__7': datetime.date(2025, 4, 24), 'summary__7': 'Gazan civilians are losing their fear of Hamas, openly criticising the group on the streets and online.', 'category__7': 'Middle East', 'url__8': 'https://www.bbc.com/news/articles/crm3x27vw70o', 'title__8': 'Migrant tents removed from Guantanamo bay, satellite images show', 'publication_date__8': datetime.date(2025, 4, 26), 'summary__8': "Some 175 tents raised as part of an expansion to the base's migrant detention centre have been removed.", 'category__8': 'World', 'url__9': 'https://www.bbc.com/news/videos/c9qwl3n7ljyo', 'title__9': "How Trump's tariffs may impact India", 'publication_date__9': datetime.date(2025, 4, 26), 'summary__9': "The BBC's Nikhil Inamdar explains how US President Donald Trump's tariffs could impact India.", 'category__9': 'Asia' ... 4900 parameters truncated ... 'url__990': 'https://www.bbc.com/news/articles/cpv4974k27wo', 'title__990': "Musk's X is suing India, as Tesla and Starlink plan entry", 'publication_date__990': datetime.date(2025, 4, 26), 'summary__990': 'X says a new government portal gives officials wide-ranging powers to issue blocking orders.', 'category__990': 'Asia', 'url__991': 'https://www.bbc.com/news/articles/ckgezj14w80o', 'title__991': "Saving Ireland's thatched cottages", 'publication_date__991': datetime.date(2025, 4, 19), 'summary__991': 'The number of thatched houses in the Republic of Ireland is dwindling but new classes are training up the next generation of thatchers.', 'category__991': 'Europe', 'url__992': 'https://www.bbc.com/news/articles/clyz65p1k45o', 'title__992': 'Children routinely using social media, Australian regulator says', 'publication_date__992': datetime.date(2025, 4, 26), 'summary__992': 'It found they were easily able to bypass age checks on apps, which face being banned for under-16s.', 'category__992': 'Australia', 'url__993': 'https://www.bbc.com/news/videos/cn4yzywpy72o', 'title__993': 'Moment man vandalises ancient Incan artefact', 'publication_date__993': datetime.date(2025, 4, 26), 'summary__993': "Peruvian police released footage showing a suspect pounding Cusco's 12-Angle Stone.", 'category__993': 'Latin America', 'url__994': 'https://www.bbc.com/news/articles/cpwrg0kr85ko', 'title__994': 'McQueen explores century of protest photography', 'publication_date__994': datetime.date(2025, 4, 26), 'summary__994': 'Resistance will be shown at the Turner Contemporary gallery in Margate from 22 February.', 'category__994': 'In Pictures', 'url__995': 'https://www.bbc.com/news/articles/cg70pprzegyo', 'title__995': "India's rivers are home to 6,000 dolphins - but they are in trouble", 'publication_date__995': datetime.date(2025, 4, 26), 'summary__995': 'Gangetic and Indus river dolphins are found in over two-dozen rivers in India.', 'category__995': 'Asia', 'url__996': 'https://www.bbc.com/news/articles/c14x524g1g8o', 'title__996': 'Pope wanted to work until the end, archbishop tells BBC', 'publication_date__996': datetime.date(2025, 4, 25), 'summary__996': 'In an exclusive interview with the BBC, Archbishop Paul Gallagher says Pope Francis preferred to "die with his boots on".', 'category__996': 'Europe', 'url__997': 'https://www.bbc.com/news/articles/c78jnxe7yw4o', 'title__997': 'Photographer over the moon with lunar mountain shot', 'publication_date__997': datetime.date(2025, 4, 26), 'summary__997': 'Tony Harnett says the shot, taken from six miles away, has taken years to capture perfectly.', 'category__997': 'Wales', 'url__998': 'https://www.bbc.com/news/articles/cq5zxe5l58go', 'title__998': 'Israeli air strike kills top Hamas official in Gaza', 'publication_date__998': datetime.date(2025, 4, 26), 'summary__998': 'Salah al-Bardaweel and his wife died in the southern city of Khan Younis, a Hamas source told the BBC.', 'category__998': 'Middle East', 'url__999': 'https://www.bbc.com/news/articles/cn0jrkv7k29o', 'title__999': 'Teen armed with gun overpowered by passengers onboard plane', 'publication_date__999': datetime.date(2025, 4, 26), 'summary__999': 'A 17-year-old has been charged after being detained by crew and members of the public on a plane in Australia.', 'category__999': 'Australia'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-13 11:37:53,637 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:37:53,638 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:39:36,744 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:39:36,796 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:39:36,800 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:39:36,885 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: (psycopg2.errors.NotNullViolation) null value in column "processed_date" of relation "dim_cleaned" violates not-null constraint
+DETAIL:  Failing row contains (4, Trump's tariffs are a huge blow to Vietnam's economic ambitions, Asia, 2025-04-26 00:00:00, https://www.bbc.com/news/articles/crm332189djo, US exports have driven the economic success of countries like Vi..., null).
+
+[SQL: INSERT INTO dim_cleaned (title, category, publication_date, url, summary) VALUES (%(title__0)s, %(category__0)s, %(publication_date__0)s, %(url__0)s, %(summary__0)s), (%(title__1)s, %(category__1)s, %(publication_date__1)s, %(url__1)s, %(summary__1)s ... 95179 characters truncated ... 8)s), (%(title__999)s, %(category__999)s, %(publication_date__999)s, %(url__999)s, %(summary__999)s)]
+[parameters: {'url__0': 'https://www.bbc.com/news/articles/crm332189djo', 'title__0': "Trump's tariffs are a huge blow to Vietnam's economic ambitions", 'publication_date__0': datetime.date(2025, 4, 26), 'summary__0': 'US exports have driven the economic success of countries like Vietnam and Cambodia.', 'category__0': 'Asia', 'url__1': 'https://www.bbc.com/news/articles/c5yg2y21yq5o', 'title__1': 'Trump administration proposes State Department cuts in major overhaul', 'publication_date__1': datetime.date(2025, 4, 22), 'summary__1': 'The cuts involve some 130 of the more than 700 agency offices within the State Department.', 'category__1': 'US & Canada', 'url__2': 'https://www.bbc.com/news/articles/cg41qg74y04o', 'title__2': "Nigeria's spectacular horse parade closing Ramadan", 'publication_date__2': datetime.date(2025, 4, 26), 'summary__2': 'In the city of Dutse, thousands filled the streets to celebrate a centuries-old festival.', 'category__2': 'Africa', 'url__3': 'https://www.bbc.com/news/articles/c4g7wdw9jvno', 'title__3': "Zelensky accuses Trump's envoy of spreading 'Russian narratives'", 'publication_date__3': datetime.date(2025, 4, 26), 'summary__3': 'Steve Witkoff appeared to suggest that a peace deal hinged on the status of five Ukrainian regions.', 'category__3': 'Europe', 'url__4': 'https://www.bbc.com/news/articles/cvglwd34l81o', 'title__4': "Landslides kill at least 10 in Brazil's Minas Gerais state", 'publication_date__4': datetime.date(2025, 4, 26), 'summary__4': 'The landslides were triggered by torrential rain which fell in the city in the early hours of Sunday.', 'category__4': 'Latin America', 'url__5': 'https://www.bbc.com/news/64836315', 'title__5': 'Why more parents are losing child benefit', 'publication_date__5': datetime.date(2025, 4, 26), 'summary__5': 'More parents are losing child benefit because the threshold at which it starts being withdrawn has not changed in 10 years.', 'category__5': 'Reality Check', 'url__6': 'https://www.bbc.com/news/videos/c14xldg3mjvo', 'title__6': "Why Trump's tariffs aren't really reciprocal", 'publication_date__6': datetime.date(2025, 4, 26), 'summary__6': "BBC Verify's Ben Chu takes a look at the wide range of different tariffs being imposed on countries.", 'category__6': 'US & Canada', 'url__7': 'https://www.bbc.com/news/articles/c175z14r8pro', 'title__7': "Anti-Hamas protests on rise in Gaza as group's iron grip slips", 'publication_date__7': datetime.date(2025, 4, 24), 'summary__7': 'Gazan civilians are losing their fear of Hamas, openly criticising the group on the streets and online.', 'category__7': 'Middle East', 'url__8': 'https://www.bbc.com/news/articles/crm3x27vw70o', 'title__8': 'Migrant tents removed from Guantanamo bay, satellite images show', 'publication_date__8': datetime.date(2025, 4, 26), 'summary__8': "Some 175 tents raised as part of an expansion to the base's migrant detention centre have been removed.", 'category__8': 'World', 'url__9': 'https://www.bbc.com/news/videos/c9qwl3n7ljyo', 'title__9': "How Trump's tariffs may impact India", 'publication_date__9': datetime.date(2025, 4, 26), 'summary__9': "The BBC's Nikhil Inamdar explains how US President Donald Trump's tariffs could impact India.", 'category__9': 'Asia' ... 4900 parameters truncated ... 'url__990': 'https://www.bbc.com/news/articles/cpv4974k27wo', 'title__990': "Musk's X is suing India, as Tesla and Starlink plan entry", 'publication_date__990': datetime.date(2025, 4, 26), 'summary__990': 'X says a new government portal gives officials wide-ranging powers to issue blocking orders.', 'category__990': 'Asia', 'url__991': 'https://www.bbc.com/news/articles/ckgezj14w80o', 'title__991': "Saving Ireland's thatched cottages", 'publication_date__991': datetime.date(2025, 4, 19), 'summary__991': 'The number of thatched houses in the Republic of Ireland is dwindling but new classes are training up the next generation of thatchers.', 'category__991': 'Europe', 'url__992': 'https://www.bbc.com/news/articles/clyz65p1k45o', 'title__992': 'Children routinely using social media, Australian regulator says', 'publication_date__992': datetime.date(2025, 4, 26), 'summary__992': 'It found they were easily able to bypass age checks on apps, which face being banned for under-16s.', 'category__992': 'Australia', 'url__993': 'https://www.bbc.com/news/videos/cn4yzywpy72o', 'title__993': 'Moment man vandalises ancient Incan artefact', 'publication_date__993': datetime.date(2025, 4, 26), 'summary__993': "Peruvian police released footage showing a suspect pounding Cusco's 12-Angle Stone.", 'category__993': 'Latin America', 'url__994': 'https://www.bbc.com/news/articles/cpwrg0kr85ko', 'title__994': 'McQueen explores century of protest photography', 'publication_date__994': datetime.date(2025, 4, 26), 'summary__994': 'Resistance will be shown at the Turner Contemporary gallery in Margate from 22 February.', 'category__994': 'In Pictures', 'url__995': 'https://www.bbc.com/news/articles/cg70pprzegyo', 'title__995': "India's rivers are home to 6,000 dolphins - but they are in trouble", 'publication_date__995': datetime.date(2025, 4, 26), 'summary__995': 'Gangetic and Indus river dolphins are found in over two-dozen rivers in India.', 'category__995': 'Asia', 'url__996': 'https://www.bbc.com/news/articles/c14x524g1g8o', 'title__996': 'Pope wanted to work until the end, archbishop tells BBC', 'publication_date__996': datetime.date(2025, 4, 25), 'summary__996': 'In an exclusive interview with the BBC, Archbishop Paul Gallagher says Pope Francis preferred to "die with his boots on".', 'category__996': 'Europe', 'url__997': 'https://www.bbc.com/news/articles/c78jnxe7yw4o', 'title__997': 'Photographer over the moon with lunar mountain shot', 'publication_date__997': datetime.date(2025, 4, 26), 'summary__997': 'Tony Harnett says the shot, taken from six miles away, has taken years to capture perfectly.', 'category__997': 'Wales', 'url__998': 'https://www.bbc.com/news/articles/cq5zxe5l58go', 'title__998': 'Israeli air strike kills top Hamas official in Gaza', 'publication_date__998': datetime.date(2025, 4, 26), 'summary__998': 'Salah al-Bardaweel and his wife died in the southern city of Khan Younis, a Hamas source told the BBC.', 'category__998': 'Middle East', 'url__999': 'https://www.bbc.com/news/articles/cn0jrkv7k29o', 'title__999': 'Teen armed with gun overpowered by passengers onboard plane', 'publication_date__999': datetime.date(2025, 4, 26), 'summary__999': 'A 17-year-old has been charged after being detained by crew and members of the public on a plane in Australia.', 'category__999': 'Australia'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-13 11:39:36,885 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:39:36,885 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:39:55,227 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:39:55,298 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:39:55,300 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:39:55,382 - __main__ - ERROR - Gagal membuat tabel dim_cleaned: (psycopg2.errors.NotNullViolation) null value in column "processed_date" of relation "dim_cleaned" violates not-null constraint
+DETAIL:  Failing row contains (5, Trump's tariffs are a huge blow to Vietnam's economic ambitions, Asia, 2025-04-26 00:00:00, https://www.bbc.com/news/articles/crm332189djo, US exports have driven the economic success of countries like Vi..., null).
+
+[SQL: INSERT INTO dim_cleaned (title, category, publication_date, url, summary) VALUES (%(title__0)s, %(category__0)s, %(publication_date__0)s, %(url__0)s, %(summary__0)s), (%(title__1)s, %(category__1)s, %(publication_date__1)s, %(url__1)s, %(summary__1)s ... 95179 characters truncated ... 8)s), (%(title__999)s, %(category__999)s, %(publication_date__999)s, %(url__999)s, %(summary__999)s)]
+[parameters: {'url__0': 'https://www.bbc.com/news/articles/crm332189djo', 'title__0': "Trump's tariffs are a huge blow to Vietnam's economic ambitions", 'publication_date__0': datetime.date(2025, 4, 26), 'summary__0': 'US exports have driven the economic success of countries like Vietnam and Cambodia.', 'category__0': 'Asia', 'url__1': 'https://www.bbc.com/news/articles/c5yg2y21yq5o', 'title__1': 'Trump administration proposes State Department cuts in major overhaul', 'publication_date__1': datetime.date(2025, 4, 22), 'summary__1': 'The cuts involve some 130 of the more than 700 agency offices within the State Department.', 'category__1': 'US & Canada', 'url__2': 'https://www.bbc.com/news/articles/cg41qg74y04o', 'title__2': "Nigeria's spectacular horse parade closing Ramadan", 'publication_date__2': datetime.date(2025, 4, 26), 'summary__2': 'In the city of Dutse, thousands filled the streets to celebrate a centuries-old festival.', 'category__2': 'Africa', 'url__3': 'https://www.bbc.com/news/articles/c4g7wdw9jvno', 'title__3': "Zelensky accuses Trump's envoy of spreading 'Russian narratives'", 'publication_date__3': datetime.date(2025, 4, 26), 'summary__3': 'Steve Witkoff appeared to suggest that a peace deal hinged on the status of five Ukrainian regions.', 'category__3': 'Europe', 'url__4': 'https://www.bbc.com/news/articles/cvglwd34l81o', 'title__4': "Landslides kill at least 10 in Brazil's Minas Gerais state", 'publication_date__4': datetime.date(2025, 4, 26), 'summary__4': 'The landslides were triggered by torrential rain which fell in the city in the early hours of Sunday.', 'category__4': 'Latin America', 'url__5': 'https://www.bbc.com/news/64836315', 'title__5': 'Why more parents are losing child benefit', 'publication_date__5': datetime.date(2025, 4, 26), 'summary__5': 'More parents are losing child benefit because the threshold at which it starts being withdrawn has not changed in 10 years.', 'category__5': 'Reality Check', 'url__6': 'https://www.bbc.com/news/videos/c14xldg3mjvo', 'title__6': "Why Trump's tariffs aren't really reciprocal", 'publication_date__6': datetime.date(2025, 4, 26), 'summary__6': "BBC Verify's Ben Chu takes a look at the wide range of different tariffs being imposed on countries.", 'category__6': 'US & Canada', 'url__7': 'https://www.bbc.com/news/articles/c175z14r8pro', 'title__7': "Anti-Hamas protests on rise in Gaza as group's iron grip slips", 'publication_date__7': datetime.date(2025, 4, 24), 'summary__7': 'Gazan civilians are losing their fear of Hamas, openly criticising the group on the streets and online.', 'category__7': 'Middle East', 'url__8': 'https://www.bbc.com/news/articles/crm3x27vw70o', 'title__8': 'Migrant tents removed from Guantanamo bay, satellite images show', 'publication_date__8': datetime.date(2025, 4, 26), 'summary__8': "Some 175 tents raised as part of an expansion to the base's migrant detention centre have been removed.", 'category__8': 'World', 'url__9': 'https://www.bbc.com/news/videos/c9qwl3n7ljyo', 'title__9': "How Trump's tariffs may impact India", 'publication_date__9': datetime.date(2025, 4, 26), 'summary__9': "The BBC's Nikhil Inamdar explains how US President Donald Trump's tariffs could impact India.", 'category__9': 'Asia' ... 4900 parameters truncated ... 'url__990': 'https://www.bbc.com/news/articles/cpv4974k27wo', 'title__990': "Musk's X is suing India, as Tesla and Starlink plan entry", 'publication_date__990': datetime.date(2025, 4, 26), 'summary__990': 'X says a new government portal gives officials wide-ranging powers to issue blocking orders.', 'category__990': 'Asia', 'url__991': 'https://www.bbc.com/news/articles/ckgezj14w80o', 'title__991': "Saving Ireland's thatched cottages", 'publication_date__991': datetime.date(2025, 4, 19), 'summary__991': 'The number of thatched houses in the Republic of Ireland is dwindling but new classes are training up the next generation of thatchers.', 'category__991': 'Europe', 'url__992': 'https://www.bbc.com/news/articles/clyz65p1k45o', 'title__992': 'Children routinely using social media, Australian regulator says', 'publication_date__992': datetime.date(2025, 4, 26), 'summary__992': 'It found they were easily able to bypass age checks on apps, which face being banned for under-16s.', 'category__992': 'Australia', 'url__993': 'https://www.bbc.com/news/videos/cn4yzywpy72o', 'title__993': 'Moment man vandalises ancient Incan artefact', 'publication_date__993': datetime.date(2025, 4, 26), 'summary__993': "Peruvian police released footage showing a suspect pounding Cusco's 12-Angle Stone.", 'category__993': 'Latin America', 'url__994': 'https://www.bbc.com/news/articles/cpwrg0kr85ko', 'title__994': 'McQueen explores century of protest photography', 'publication_date__994': datetime.date(2025, 4, 26), 'summary__994': 'Resistance will be shown at the Turner Contemporary gallery in Margate from 22 February.', 'category__994': 'In Pictures', 'url__995': 'https://www.bbc.com/news/articles/cg70pprzegyo', 'title__995': "India's rivers are home to 6,000 dolphins - but they are in trouble", 'publication_date__995': datetime.date(2025, 4, 26), 'summary__995': 'Gangetic and Indus river dolphins are found in over two-dozen rivers in India.', 'category__995': 'Asia', 'url__996': 'https://www.bbc.com/news/articles/c14x524g1g8o', 'title__996': 'Pope wanted to work until the end, archbishop tells BBC', 'publication_date__996': datetime.date(2025, 4, 25), 'summary__996': 'In an exclusive interview with the BBC, Archbishop Paul Gallagher says Pope Francis preferred to "die with his boots on".', 'category__996': 'Europe', 'url__997': 'https://www.bbc.com/news/articles/c78jnxe7yw4o', 'title__997': 'Photographer over the moon with lunar mountain shot', 'publication_date__997': datetime.date(2025, 4, 26), 'summary__997': 'Tony Harnett says the shot, taken from six miles away, has taken years to capture perfectly.', 'category__997': 'Wales', 'url__998': 'https://www.bbc.com/news/articles/cq5zxe5l58go', 'title__998': 'Israeli air strike kills top Hamas official in Gaza', 'publication_date__998': datetime.date(2025, 4, 26), 'summary__998': 'Salah al-Bardaweel and his wife died in the southern city of Khan Younis, a Hamas source told the BBC.', 'category__998': 'Middle East', 'url__999': 'https://www.bbc.com/news/articles/cn0jrkv7k29o', 'title__999': 'Teen armed with gun overpowered by passengers onboard plane', 'publication_date__999': datetime.date(2025, 4, 26), 'summary__999': 'A 17-year-old has been charged after being detained by crew and members of the public on a plane in Australia.', 'category__999': 'Australia'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-13 11:39:55,382 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:39:55,382 - __main__ - ERROR - Data tidak berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:40:32,219 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:40:32,223 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:40:32,227 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:40:32,247 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:42:10,645 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:42:10,700 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:42:10,708 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:42:10,854 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:42:10,854 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:42:10,854 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:43:16,592 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:43:16,598 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:43:16,604 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:43:16,627 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:43:19,688 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:43:19,692 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:43:19,697 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:43:19,718 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:43:30,152 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:43:30,155 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:43:30,163 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:43:30,171 - __main__ - ERROR - Gagal mentransformasi data: to_datetime() missing 1 required positional argument: 'arg'
+2025-05-13 11:43:30,172 - __main__ - ERROR - Data tidak berhasil di-transformasi.
+2025-05-13 11:44:20,476 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:44:20,481 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 11:44:20,486 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 11:44:20,506 - __main__ - INFO - Data berhasil di-transformasi dan disimpan ke ./transformed/transformed_data.parquet.
+2025-05-13 11:44:28,775 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 11:44:28,819 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 11:44:28,832 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 11:44:28,928 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 11:44:28,932 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 11:44:28,935 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 12:20:47,651 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 12:20:47,707 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 12:20:47,707 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 12:20:47,716 - __main__ - INFO - Data saved to staging: ./extracted\staging_data.parquet
+2025-05-13 12:20:47,731 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 12:20:47,735 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 12:20:47,738 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 12:20:47,748 - __main__ - INFO - Transformed data saved: ./transformed\transformed_data.parquet
+2025-05-13 12:20:47,762 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 12:20:47,787 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 12:20:47,789 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 12:20:47,865 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 12:20:47,869 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 12:20:47,869 - __main__ - INFO - ETL pipeline completed successfully.
+2025-05-13 12:20:47,872 - __main__ - INFO - All ETL steps completed successfully.
+2025-05-13 12:21:09,344 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 12:21:09,447 - __main__ - INFO - Data berhasil diekstrak dari data warehouse.
+2025-05-13 12:21:09,450 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 12:21:09,469 - __main__ - INFO - Data saved to staging: ./extracted\staging_data.parquet
+2025-05-13 12:21:09,511 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 12:21:09,526 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki duplikat.
+2025-05-13 12:21:09,537 - __main__ - INFO - Dataset 'bbc_df' tidak memiliki null values.
+2025-05-13 12:21:09,585 - __main__ - INFO - Transformed data saved: ./transformed\transformed_data.parquet
+2025-05-13 12:21:09,623 - __main__ - INFO - Data berhasil dibaca dari staging area.
+2025-05-13 12:21:09,679 - __main__ - INFO - Koneksi database berhasil dibuka.
+2025-05-13 12:21:09,694 - __main__ - INFO - Tabel dim_cleaned berhasil dibuat atau sudah ada.
+2025-05-13 12:21:09,888 - __main__ - INFO - Data berhasil dimuat ke tabel dim_cleaned.
+2025-05-13 12:21:09,892 - __main__ - INFO - Koneksi database berhasil ditutup.
+2025-05-13 12:21:09,896 - __main__ - INFO - ETL pipeline completed successfully.
+2025-05-13 12:21:09,901 - __main__ - INFO - All ETL steps completed successfully.
+2025-05-13 13:02:24,969 - __main__ - INFO - Database connection successfully opened.
+2025-05-13 13:02:25,015 - __main__ - INFO - Data successfully extracted from data warehouse.
+2025-05-13 13:02:25,016 - __main__ - INFO - Database connection closed.
+2025-05-13 13:02:25,022 - __main__ - INFO - Data saved to staging: ./extracted\staging_data.parquet
+2025-05-13 13:02:25,033 - __main__ - INFO - Data was successfully read from the staging area.
+2025-05-13 13:02:25,036 - __main__ - INFO - Dataset 'bbc_df' has no duplicates.
+2025-05-13 13:02:25,039 - __main__ - INFO - Dataset 'bbc_df' has no null values.
+2025-05-13 13:02:25,048 - __main__ - INFO - Transformed data saved: ./transformed\transformed_data.parquet
+2025-05-13 13:02:25,068 - __main__ - INFO - Data was successfully read from the transformed area.
+2025-05-13 13:02:25,093 - __main__ - INFO - Database connection successfully opened.
+2025-05-13 13:02:25,097 - __main__ - INFO - Table dim_cleaned was successfully created or already exists.
+2025-05-13 13:02:25,302 - __main__ - INFO - Data successfully loaded into dim_cleaned table.
+2025-05-13 13:02:25,303 - __main__ - INFO - Database connection closed.
+2025-05-13 13:02:25,303 - __main__ - INFO - ETL pipeline completed successfully.
+2025-05-13 13:02:25,304 - __main__ - INFO - All ETL steps completed successfully.

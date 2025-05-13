@@ -1,0 +1,6 @@
+
+postgresql:
+  host: localhost
+  database: Assignment10-DWHModelling
+  user: postgres
+  password:

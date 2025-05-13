@@ -2,7 +2,7 @@
 
 ## 🚀 Project Overview
 
-This project implements an ETL (Extract, Transform, Load) pipeline to process raw data, transform it into a structured format, and prepare it for analysis or loading into a database. The pipeline is organized for modularity and scalability, making it easy to extend or integrate with other tools.
+This project implements an ETL (Extract, Transform, Load) pipeline to retrieve news data from a data warehouse, clean and structure it for analysis, and load the processed data back into a dedicated table. The process ensures high-quality, well-formatted data suitable for downstream analytics or reporting.
 
 > 🛢️ **Database used**: PostgreSQL
 
@@ -28,7 +28,7 @@ The project is organized as follows:
 
 ## ✨ Features
 
-* 📤 **Extract**: Read raw data from sources and write to Parquet (`extracted/staging_data.parquet`).
+* 📤 **Extract**: Read data from data warehouse and write to Parquet (`extracted/staging_data.parquet`).
 * 🧹 **Transform**: Clean, normalize, and enrich the data; output saved to `transformed/transformed_data.parquet`.
 * 🧾 **Logging**: Record pipeline steps and errors in `logs/etl_pipeline.log`.
 * 📓 **Interactive Notebook**: `etl.ipynb` for data exploration and ad hoc transformations.

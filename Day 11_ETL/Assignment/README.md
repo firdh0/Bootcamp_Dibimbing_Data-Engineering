@@ -2,7 +2,7 @@
 
 ## 🚀 Project Overview
 
-This project implements an ETL (Extract, Transform, Load) pipeline to process raw data, transform it into a structured format, and prepare it for analysis or loading into a database. The pipeline is organized for modularity and scalability, making it easy to extend or integrate with other tools.
+This project implements an ETL (Extract, Transform, Load) pipeline to retrieve news data from a data warehouse, clean and structure it for analysis, and load the processed data back into a dedicated table. The process ensures high-quality, well-formatted data suitable for downstream analytics or reporting.
 
 > 🛢️ **Database used**: PostgreSQL
 

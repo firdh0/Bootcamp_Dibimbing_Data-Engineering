@@ -1,0 +1,486 @@
+# ================================ AIRFLOW ================================
+x-airflow-common:
+  &airflow-common
+  build: ./airflow/.
+  environment:
+    &airflow-common-env
+    AIRFLOW_UID: "${AIRFLOW_UID:-50000}"
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/data:/opt/airflow/data
+    - ./airflow/plugins:/opt/airflow/plugins
+  user: "${AIRFLOW_UID:-50000}:0"
+  env_file:
+    - ./airflow/.env
+  depends_on:
+    &airflow-common-depends-on
+    airflow-postgres:
+      condition: service_healthy
+
+services:
+  airflow-postgres:
+    image: quay.io/debezium/example-postgres:2.6
+    container_name: airflow-postgres
+    env_file:
+      - ./airflow/.env
+    ports:
+      - 5433:5432
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    depends_on:
+      - statsd-exporter
+    profiles:
+      - airflow
+
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow-webserver
+    command: webserver
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+    profiles:
+      - airflow
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow-scheduler
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+    profiles:
+      - airflow
+
+  airflow-triggerer:
+    <<: *airflow-common
+    container_name: airflow-triggerer
+    command: triggerer
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+    profiles:
+      - airflow
+
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow-init
+    entrypoint: /bin/bash
+    # yamllint disable rule:line-length
+    command:
+      - -c
+      - |
+        if [[ -z "${AIRFLOW_UID}" ]]; then
+          echo
+          echo -e "\033[1;33mWARNING!!!: AIRFLOW_UID not set!\e[0m"
+          echo "If you are on Linux, you SHOULD follow the instructions below to set "
+          echo "AIRFLOW_UID environment variable, otherwise files will be owned by root."
+          echo "For other operating systems you can get rid of the warning with manually created .env file:"
+          echo "    See: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user"
+          echo
+        fi
+        one_meg=1048576
+        mem_available=$$(($$(getconf _PHYS_PAGES) * $$(getconf PAGE_SIZE) / one_meg))
+        cpus_available=$$(grep -cE 'cpu[0-9]+' /proc/stat)
+        disk_available=$$(df / | tail -1 | awk '{print $$4}')
+        warning_resources="false"
+        if (( mem_available < 4000 )) ; then
+          echo
+          echo -e "\033[1;33mWARNING!!!: Not enough memory available for Docker.\e[0m"
+          echo "At least 4GB of memory required. You have $$(numfmt --to iec $$((mem_available * one_meg)))"
+          echo
+          warning_resources="true"
+        fi
+        if (( cpus_available < 2 )); then
+          echo
+          echo -e "\033[1;33mWARNING!!!: Not enough CPUS available for Docker.\e[0m"
+          echo "At least 2 CPUs recommended. You have $${cpus_available}"
+          echo
+          warning_resources="true"
+        fi
+        if (( disk_available < one_meg * 10 )); then
+          echo
+          echo -e "\033[1;33mWARNING!!!: Not enough Disk space available for Docker.\e[0m"
+          echo "At least 10 GBs recommended. You have $$(numfmt --to iec $$((disk_available * 1024 )))"
+          echo
+          warning_resources="true"
+        fi
+        if [[ $${warning_resources} == "true" ]]; then
+          echo
+          echo -e "\033[1;33mWARNING!!!: You have not enough resources to run Airflow (see above)!\e[0m"
+          echo "Please follow the instructions to increase amount of resources available:"
+          echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
+          echo
+        fi
+        mkdir -p /sources/logs /sources/dags /sources/plugins
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        exec /entrypoint airflow version
+    # yamllint enable rule:line-length
+    user: "0:0"
+    profiles:
+      - airflow
+
+  statsd-exporter:
+    image: prom/statsd-exporter:latest
+    container_name: airflow-statsd-exporter
+    command: "--statsd.listen-udp=:8125 --web.listen-address=:9102"
+    ports:
+      - 9123:9102
+      - 8125:8125/udp
+    profiles:
+      - airflow
+
+# ================================ GRAFANA ================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: grafana-prometheus
+    user: "0"
+    ports:
+      - 9090:9090
+    volumes:
+      - ./grafana/prometheus.yaml:/prometheus.yaml
+    command: "--config.file=/prometheus.yaml"
+    profiles:
+      - grafana
+
+  grafana:
+    image: grafana/grafana:10.2.4-ubuntu
+    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana/config/provisioning/datasources/:/etc/grafana/provisioning/datasources/
+      - ./grafana/config/provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
+      - ./grafana/config/grafana/dashboards/:/var/lib/grafana/dashboards/
+      - ./grafana/config/grafana/plugins/:/var/lib/grafana/plugins/
+    profiles:
+      - grafana
+
+# ================================ DB ================================
+  mysql:
+    image: quay.io/debezium/example-mysql:2.6
+    container_name: mysql
+    env_file: 
+      - ./db/.env 
+    ports:
+      - 3303:3306
+    profiles:
+      - mysql
+      - db
+
+  postgres:
+    image: quay.io/debezium/example-postgres:2.6
+    container_name: postgres
+    env_file:
+      - ./db/.env
+    ports:
+      - 5434:5432
+    profiles:
+      - postgres
+      - db
+
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    container_name: hive-namenode
+    environment:
+      CLUSTER_NAME: hive
+    env_file:
+      - ./db/.env
+    ports:
+      - 50070:50070
+    profiles:
+      - hive
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    container_name: hive-datanode
+    env_file:
+      - ./db/.env
+    environment:
+      SERVICE_PRECONDITION: namenode:50070
+    depends_on:
+      - namenode
+    ports:
+      - 50075:50075
+    profiles:
+      - hive
+
+  hive-server:
+    image: bde2020/hive:2.3.2-postgresql-metastore
+    container_name: hive-server
+    env_file:
+      - ./db/.env
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: jdbc:postgresql://hive-metastore/metastore
+      SERVICE_PRECONDITION: hive-metastore:9083
+    depends_on:
+      - hive-metastore
+    ports:
+      - 10000:10000
+    profiles:
+      - hive
+
+  hive-metastore:
+    image: bde2020/hive:2.3.2-postgresql-metastore
+    container_name: hive-metastore
+    env_file:
+      - ./db/.env
+    command: /opt/hive/bin/hive --service metastore
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 hive-metastore-postgresql:5432"
+    depends_on:
+      - hive-metastore-postgresql
+    ports:
+      - 9083:9083
+    profiles:
+      - hive
+
+  hive-metastore-postgresql:
+    image: bde2020/hive-metastore-postgresql:2.3.0
+    container_name: hive-metastore-postgresql
+    depends_on:
+      - datanode
+    profiles:
+      - hive
+
+  sqlite:
+    image: nouchka/sqlite3:latest
+    container_name: sqlite
+    env_file:
+      - ./db/.env
+    volumes:
+      - ${SQLITE_DB_PATH}:/data/database.sqlite
+    ports:
+      - ${SQLITE_PORT}:${SQLITE_PORT}
+    profiles:
+      - sqlite
+
+# ================================ SPARK ================================
+  spark-master:
+    build: ./spark/.
+    container_name: spark-master
+    hostname: spark
+    env_file:
+      - ./spark/.env
+    environment:
+      SPARK_MODE: master
+    ports:
+      - 10010:8080
+      - 7077:7077
+      - 4040-4050:4040-4050
+    working_dir: /spark
+    volumes:
+      - ./spark/:/spark
+    profiles:
+      - spark
+
+  spark-worker-1:
+    build: ./spark/.
+    container_name: spark-worker-1
+    ports:
+      - 10011:8081
+    env_file:
+      - ./spark/.env
+    environment:
+      SPARK_MODE: worker
+    working_dir: /spark
+    volumes:
+      - ./spark/:/spark
+    profiles:
+      - spark
+
+  spark-worker-2:
+    build: ./spark/.
+    container_name: spark-worker-2
+    ports:
+      - 10012:8081
+    env_file:
+      - ./spark/.env
+    environment:
+      SPARK_MODE: worker
+    working_dir: /spark
+    volumes:
+      - ./spark/:/spark
+    profiles:
+      - spark
+
+# ================================ KAFKA ================================
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - 2181:2181
+    env_file:
+      - ./kafka/.env
+    profiles:
+      - kafka
+
+  kafka1:
+    image: confluentinc/cp-kafka:7.3.2
+    hostname: kafka1
+    container_name: kafka1
+    ports:
+      - 9092:9092
+      - 29092:29092
+      - 9999:9999
+    env_file:
+      - ./kafka/.env
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka1:19092,EXTERNAL://127.0.0.1:9092,DOCKER://host.docker.internal:29092
+    depends_on:
+      - zookeeper
+    profiles:
+      - kafka
+
+  kafka2:
+    image: confluentinc/cp-kafka:7.3.2
+    hostname: kafka2
+    container_name: kafka2
+    ports:
+      - 9093:9093
+      - 29093:29093
+    env_file:
+      - ./kafka/.env
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka2:19093,EXTERNAL://127.0.0.1:9093,DOCKER://host.docker.internal:29093
+    depends_on:
+      - zookeeper
+    profiles:
+      - kafka
+
+  kafka3:
+    image: confluentinc/cp-kafka:7.3.2
+    hostname: kafka3
+    container_name: kafka3
+    ports:
+      - 9094:9094
+      - 29094:29094
+    env_file:
+      - ./kafka/.env
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka3:19094,EXTERNAL://127.0.0.1:9094,DOCKER://host.docker.internal:29094
+    depends_on:
+      - zookeeper
+    profiles:
+      - kafka
+
+  kafka-schema-registry:
+    image: confluentinc/cp-schema-registry:7.3.2
+    hostname: kafka-schema-registry
+    container_name: kafka-schema-registry
+    ports:
+      - 8081:8081
+    env_file:
+      - ./kafka/.env
+    depends_on:
+      - zookeeper
+      - kafka1
+    profiles:
+      - kafka
+
+  kafka-rest-proxy:
+    image: confluentinc/cp-kafka-rest:7.3.2
+    hostname: kafka-rest-proxy
+    container_name: kafka-rest-proxy
+    ports:
+      - 8082:8082
+    env_file:
+      - ./kafka/.env
+    depends_on:
+      - zookeeper
+      - kafka1
+      - kafka-schema-registry
+    profiles:
+      - kafka
+
+  ksqldb-server:
+    image: confluentinc/cp-ksqldb-server:7.3.2
+    hostname: ksqldb-server
+    container_name: ksqldb-server
+    ports:
+      - 8088:8088
+    env_file:
+      - ./kafka/.env
+    depends_on:
+      - zookeeper
+      - kafka1
+    profiles:
+      - kafka
+
+  ksqldb-cli:
+    image: confluentinc/cp-ksqldb-cli:7.3.2
+    container_name: ksqldb-cli
+    platform: linux/amd64
+    depends_on:
+      - kafka1
+      - ksqldb-server
+    entrypoint: /bin/sh
+    tty: true
+    profiles:
+      - kafka
+
+  kafka-connect:
+    image: confluentinc/cp-kafka-connect:7.3.2
+    container_name: kafka-connect
+    ports:
+      - 8083:8083
+    command:
+      - bash
+      - -c
+      - |
+        echo "Installing Connector"
+        confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
+        confluent-hub install --no-prompt debezium/debezium-connector-postgresql:latest
+        confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
+        #
+        echo "Launching Kafka Connect worker"
+        /etc/confluent/docker/run &
+        #
+        sleep infinity
+    env_file:
+      - ./kafka/.env
+    depends_on:
+      - kafka-schema-registry
+      - kafka1
+    profiles:
+      - kafka
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - 9000:8080
+    env_file:
+      - ./kafka/.env
+    profiles:
+      - kafka

@@ -1,0 +1,28 @@
+ingestion:
+   - productlines
+   - products
+   - offices
+   - employees
+   - customers
+   - payments
+   - orders
+   - orderdetails
+
+transformation:
+   - resources/sql/case_study/silver/productlines.sql
+   - resources/sql/case_study/silver/products.sql
+   - resources/sql/case_study/silver/offices.sql
+   - resources/sql/case_study/silver/employees.sql
+   - resources/sql/case_study/silver/customers.sql
+   - resources/sql/case_study/silver/payments.sql
+   - resources/sql/case_study/silver/orders.sql
+   - resources/sql/case_study/silver/orderdetails.sql
+
+datamart:
+   - resources/sql/case_study/gold/dim_products.sql
+   - resources/sql/case_study/gold/fact_sales.sql
+
+
+
+
+

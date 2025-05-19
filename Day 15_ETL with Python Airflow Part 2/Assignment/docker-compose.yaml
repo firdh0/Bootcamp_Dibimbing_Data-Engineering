@@ -14,13 +14,13 @@ x-airflow-common:
     - ./airflow/.env
   depends_on:
     &airflow-common-depends-on
-    airflow-postgres:
+    airflow-postgres: 
       condition: service_healthy
 
 services:
   airflow-postgres:
     image: quay.io/debezium/example-postgres:2.6
-    container_name: airflow-postgres
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_airflow-postgres"
     env_file:
       - ./airflow/.env
     ports:
@@ -37,7 +37,7 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
-    container_name: airflow-webserver
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_airflow-webserver"
     command: webserver
     ports:
       - 8080:8080
@@ -56,7 +56,7 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
-    container_name: airflow-scheduler
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_airflow-scheduler"
     command: scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -73,7 +73,7 @@ services:
 
   airflow-triggerer:
     <<: *airflow-common
-    container_name: airflow-triggerer
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_airflow-triggerer"
     command: triggerer
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
@@ -90,7 +90,7 @@ services:
 
   airflow-init:
     <<: *airflow-common
-    container_name: airflow-init
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_airflow-init"
     entrypoint: /bin/bash
     # yamllint disable rule:line-length
     command:
@@ -148,7 +148,7 @@ services:
 
   statsd-exporter:
     image: prom/statsd-exporter:latest
-    container_name: airflow-statsd-exporter
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_statsd-exporter"
     command: "--statsd.listen-udp=:8125 --web.listen-address=:9102"
     ports:
       - 9123:9102
@@ -159,7 +159,7 @@ services:
 # ================================ GRAFANA ================================
   prometheus:
     image: prom/prometheus:latest
-    container_name: grafana-prometheus
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_grafana-prometheus"
     user: "0"
     ports:
       - 9090:9090
@@ -171,7 +171,7 @@ services:
 
   grafana:
     image: grafana/grafana:10.2.4-ubuntu
-    container_name: grafana
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_grafana"
     ports:
       - 3000:3000
     volumes:
@@ -185,9 +185,9 @@ services:
 # ================================ DB ================================
   mysql:
     image: quay.io/debezium/example-mysql:2.6
-    container_name: mysql
-    env_file: 
-      - ./db/.env 
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_mysql"
+    env_file:
+      - ./db/.env
     ports:
       - 3303:3306
     profiles:
@@ -196,7 +196,7 @@ services:
 
   postgres:
     image: quay.io/debezium/example-postgres:2.6
-    container_name: postgres
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_postgres"
     env_file:
       - ./db/.env
     ports:
@@ -204,10 +204,12 @@ services:
     profiles:
       - postgres
       - db
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   namenode:
     image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
-    container_name: hive-namenode
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_hive-namenode"
     environment:
       CLUSTER_NAME: hive
     env_file:
@@ -219,7 +221,7 @@ services:
 
   datanode:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
-    container_name: hive-datanode
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_hive-datanode"
     env_file:
       - ./db/.env
     environment:
@@ -233,7 +235,7 @@ services:
 
   hive-server:
     image: bde2020/hive:2.3.2-postgresql-metastore
-    container_name: hive-server
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_hive-server"
     env_file:
       - ./db/.env
     environment:
@@ -248,7 +250,7 @@ services:
 
   hive-metastore:
     image: bde2020/hive:2.3.2-postgresql-metastore
-    container_name: hive-metastore
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_hive-metastore"
     env_file:
       - ./db/.env
     command: /opt/hive/bin/hive --service metastore
@@ -263,28 +265,16 @@ services:
 
   hive-metastore-postgresql:
     image: bde2020/hive-metastore-postgresql:2.3.0
-    container_name: hive-metastore-postgresql
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_hive-metastore-postgresql"
     depends_on:
       - datanode
     profiles:
       - hive
 
-  sqlite:
-    image: nouchka/sqlite3:latest
-    container_name: sqlite
-    env_file:
-      - ./db/.env
-    volumes:
-      - ${SQLITE_DB_PATH}:/data/database.sqlite
-    ports:
-      - ${SQLITE_PORT}:${SQLITE_PORT}
-    profiles:
-      - sqlite
-
 # ================================ SPARK ================================
   spark-master:
     build: ./spark/.
-    container_name: spark-master
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_spark-master"
     hostname: spark
     env_file:
       - ./spark/.env
@@ -302,7 +292,7 @@ services:
 
   spark-worker-1:
     build: ./spark/.
-    container_name: spark-worker-1
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_spark-worker-1"
     ports:
       - 10011:8081
     env_file:
@@ -317,7 +307,7 @@ services:
 
   spark-worker-2:
     build: ./spark/.
-    container_name: spark-worker-2
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_spark-worker-2"
     ports:
       - 10012:8081
     env_file:
@@ -334,7 +324,7 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.2
     hostname: zookeeper
-    container_name: zookeeper
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_zookeeper"
     ports:
       - 2181:2181
     env_file:
@@ -345,7 +335,7 @@ services:
   kafka1:
     image: confluentinc/cp-kafka:7.3.2
     hostname: kafka1
-    container_name: kafka1
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka1"
     ports:
       - 9092:9092
       - 29092:29092
@@ -363,7 +353,7 @@ services:
   kafka2:
     image: confluentinc/cp-kafka:7.3.2
     hostname: kafka2
-    container_name: kafka2
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka2"
     ports:
       - 9093:9093
       - 29093:29093
@@ -380,7 +370,7 @@ services:
   kafka3:
     image: confluentinc/cp-kafka:7.3.2
     hostname: kafka3
-    container_name: kafka3
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka3"
     ports:
       - 9094:9094
       - 29094:29094
@@ -397,7 +387,7 @@ services:
   kafka-schema-registry:
     image: confluentinc/cp-schema-registry:7.3.2
     hostname: kafka-schema-registry
-    container_name: kafka-schema-registry
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka-schema-registry"
     ports:
       - 8081:8081
     env_file:
@@ -411,7 +401,7 @@ services:
   kafka-rest-proxy:
     image: confluentinc/cp-kafka-rest:7.3.2
     hostname: kafka-rest-proxy
-    container_name: kafka-rest-proxy
+    container_name:  "${COMPOSE_PROJECT_NAME:-assignment15}_kafka-rest-proxy"
     ports:
       - 8082:8082
     env_file:
@@ -426,7 +416,7 @@ services:
   ksqldb-server:
     image: confluentinc/cp-ksqldb-server:7.3.2
     hostname: ksqldb-server
-    container_name: ksqldb-server
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_ksqldb-server"
     ports:
       - 8088:8088
     env_file:
@@ -439,7 +429,7 @@ services:
 
   ksqldb-cli:
     image: confluentinc/cp-ksqldb-cli:7.3.2
-    container_name: ksqldb-cli
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_ksqldb-cli"
     platform: linux/amd64
     depends_on:
       - kafka1
@@ -451,7 +441,7 @@ services:
 
   kafka-connect:
     image: confluentinc/cp-kafka-connect:7.3.2
-    container_name: kafka-connect
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka-connect"
     ports:
       - 8083:8083
     command:
@@ -477,7 +467,7 @@ services:
 
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
-    container_name: kafka-ui
+    container_name: "${COMPOSE_PROJECT_NAME:-assignment15}_kafka-ui"
     ports:
       - 9000:8080
     env_file:

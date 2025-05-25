@@ -20,7 +20,7 @@ with open("dags/resources/config/case_study.yaml", "r") as f:
 )
        for table in config["ingestion"]
    }
-)
+) 
 def case_study():
    start_task          = EmptyOperator(task_id="start_task")
    end_task            = EmptyOperator(task_id="end_task")

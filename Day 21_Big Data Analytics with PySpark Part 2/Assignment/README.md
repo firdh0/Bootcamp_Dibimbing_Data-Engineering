@@ -1,37 +1,37 @@
-# Analisis Data Loyalitas Pelanggan Maskapai
+# Airline Customer Loyalty Data Analysis
 
-## Ringkasan Proyek
+## Project Summary
 
-Proyek ini bertujuan untuk menganalisis data aktivitas dan demografi pelanggan dari sebuah program loyalitas maskapai penerbangan. Dengan menggunakan Apache Spark, kami melakukan serangkaian proses mulai dari pembersihan data, transformasi, analisis, hingga visualisasi untuk mendapatkan *insight* bisnis yang berharga.
+This project aims to analyze customer activity and demographic data from an airline loyalty program. Using Apache Spark, we performed a series of processes ranging from data cleaning, transformation, analysis, to visualization to gain valuable business insights.
 
-Tujuan utamanya adalah для memahami perilaku pelanggan, mengidentifikasi segmen-segmen penting, dan menemukan pola yang dapat digunakan untuk meningkatkan strategi bisnis dan pemasaran.
-
----
-
-## Alur Proses Analisis (Pipeline)
-
-Pipeline data ini dirancang secara modular dan dijalankan secara berurutan oleh `main.py`. Berikut adalah tahapan utamanya:
-
-1.  **Inisialisasi (`SparkManager`)**: Membuat dan mengonfigurasi sesi Spark yang menjadi fondasi seluruh proses.
-2.  **Pemuatan Data (`DataLoader`)**: Memuat dataset mentah (`.csv`) dari direktori `data/raw/`.
-3.  **Pembersihan Data (`DataCleaner`)**: Menjalankan serangkaian proses pembersihan pada setiap dataset, termasuk:
-    * Standardisasi nama kolom.
-    * Penanganan nilai duplikat.
-    * Pemeriksaan dan imputasi nilai *null* (kosong) menggunakan metode statistik (mean, median, atau modus).
-4.  **Penyimpanan Data Bersih (`DataSaver`)**: Menyimpan hasil dari tahap pembersihan ke dalam format Parquet di direktori `data/cleaned/` sebagai *checkpoint*.
-5.  **Transformasi Data (`DataTransformer`)**: Menggabungkan (`join`) data aktivitas penerbangan dengan data demografi pelanggan berdasarkan `Loyalty_Number` untuk menciptakan satu dataset yang komprehensif.
-6.  **Analisis Data (`CustomerDataAnalyzer`)**: Menjalankan serangkaian query SQL pada data yang telah digabungkan untuk menjawab pertanyaan-pertanyaan bisnis kunci. Hasil dari setiap analisis ini kemudian disimpan dalam format `.csv` di direktori `data/analysis_results_csv/`.
-7.  **Visualisasi Data (`DataVisualizer`)**: Mengonversi hasil analisis menjadi visualisasi grafis (bar chart, line chart, scatter plot, dll.) dan menyimpannya sebagai file gambar (`.png`) di direktori `final_visualizations/`.
+The main goal is to understand customer behavior, identify key segments, and discover patterns that can be used to improve business and marketing strategies.
 
 ---
 
-## Detail Analisis, Query, dan Interpretasi
+## Analysis Process Flow (Pipeline)
 
-Berikut adalah rincian dari **semua 14 analisis** yang dilakukan, beserta query SQL yang digunakan, hasil visualisasi, dan interpretasi dari potensi *insight* yang ditemukan.
+This data pipeline is designed modularly and executed sequentially by `main.py`. The main stages are as follows:
 
-### 1. Rata-rata Penerbangan per Pelanggan per Tahun
-* **Pertanyaan:** Berapa rata-rata jumlah penerbangan untuk setiap pelanggan per tahunnya?
-* **Query SQL:**
+1.  **Initialization (`SparkManager`)**: Creates and configures a Spark session that forms the foundation of the entire process.
+2.  **Data Loading (`DataLoader`)**: Loads raw datasets (`.csv`) from the `data/raw/` directory.
+3.  **Data Cleaning (`DataCleaner`)**: Runs a series of cleaning processes on each dataset, including:
+    * Standardizing column names.
+    * Handling duplicate values.
+    * Checking for and imputing null values using statistical methods (mean, median, or mode).
+4.  **Clean Data Storage (`DataSaver`)**: Stores the results from the cleaning stage in Parquet format in the `data/cleaned/` directory as a checkpoint.
+5.  **Data Transformation (`DataTransformer`)**: Joins flight activity data with customer demographic data based on `Loyalty_Number` to create a comprehensive dataset.
+6.  **Data Analysis (`CustomerDataAnalyzer`)**: Executes a series of SQL queries on the merged data to answer key business questions. The results of each analysis are then saved in `.csv` format in the `data/analysis_results_csv/` directory.
+7.  **Data Visualization (`DataVisualizer`)**: Converts analysis results into graphical visualizations (bar charts, line charts, scatter plots, etc.) and saves them as image files (`.png`) in the `final_visualizations/` directory.
+
+---
+
+## Analysis Details, Queries, and Interpretation
+
+Below are the details of **all 14 analyses** performed, along with the SQL queries used, visualization results, and interpretation of potential insights found.
+
+### 1. Average Flights per Customer per Year
+* **Question:** What is the average number of flights for each customer per year?
+* **SQL Query:**
     ```sql
     SELECT
         Loyalty_Number,
@@ -41,16 +41,19 @@ Berikut adalah rincian dari **semua 14 analisis** yang dilakukan, beserta query 
     GROUP BY Loyalty_Number, Year
     ORDER BY Loyalty_Number, Year
     ```
-* **Interpretasi Insight:** 
-    1. Kontributor Terbesar: Pelanggan dengan tingkat pendidikan Sarjana (Bachelor) secara kolektif menjadi penyumbang terbesar untuk total jarak penerbangan.
-    2. Penyebab Utama: Angka yang tinggi ini kemungkinan besar bukan karena setiap individu di segmen ini terbang lebih jauh, melainkan karena jumlah pelanggan dalam segmen "Bachelor" adalah yang paling banyak di dalam dataset. Grafik ini menunjukkan nilai total (akumulatif), bukan rata-rata per pelanggan.
-    3. Segmen Bernilai Tinggi (Potensial): Total jarak yang rendah dari segmen "Master" dan "Doktor" kemungkinan disebabkan oleh jumlah populasi mereka yang lebih kecil. Ada kemungkinan jika dihitung rata-ratanya, justru segmen inilah yang memiliki nilai perjalanan per individu paling tinggi.
-* **Kesimpulan:** 
-Secara volume, segmen pelanggan "Bachelor" adalah pasar massa yang paling penting karena mereka menghasilkan total jarak tempuh terbesar. Namun, untuk strategi yang lebih spesifik seperti penawaran premium atau program loyalitas berjenjang, mengandalkan data total ini bisa menyesatkan.
+* **Insight Interpretation:**
+    1.  Largest Contributor: Customers with a Bachelor's degree collectively contribute the most to the total flight distance.
 
-### 2. Distribusi Poin Berdasarkan Kartu Loyalitas
-* **Pertanyaan:** Bagaimana distribusi total poin yang diakumulasikan pelanggan berdasarkan jenis kartu loyalitas mereka?
-* **Query SQL:**
+    2.  Main Reason: This high number is likely not because each individual in this segment flies further, but because the number of customers in the "Bachelor" segment is the largest in the dataset. This graph shows the total (cumulative) value, not the average per customer.
+
+    3.  High-Value Segments (Potential): The low total distance from "Master" and "Doctor" segments is likely due to their smaller population numbers. It's possible that if averaged, these segments would have the highest travel value per individual.
+
+* **Conclusion:**
+    By volume, the "Bachelor" customer segment is the most important mass market as they generate the largest total mileage. However, for more specific strategies such as premium offers or tiered loyalty programs, relying on this total data could be misleading.
+
+### 2. Points Distribution by Loyalty Card
+* **Question:** How is the total points accumulated by customers distributed based on their loyalty card type?
+* **SQL Query:**
     ```sql
     SELECT
         Loyalty_Card,
@@ -61,19 +64,21 @@ Secara volume, segmen pelanggan "Bachelor" adalah pasar massa yang paling pentin
     GROUP BY Loyalty_Card
     ORDER BY Total_Points_Accumulated DESC
     ```
-* **Grafik:**
-    ![Grafik Distribusi Poin per Kartu](final_visualizations/points_by_card.png)
-* **Interpretasi Insight:** 
-    1. Aktivitas Sangat Rendah untuk Mayoritas: Grafik ini menunjukkan bahwa di semua tiga jenis kartu (Aurora, Nova, Star), mayoritas besar anggota (lebih dari 75%) memiliki akumulasi poin yang sangat sedikit atau mendekati nol. Ini terlihat dari "kotak" (box) pada plot yang sangat pendek dan berada di bagian bawah.
-    2. Didominasi oleh 'Super User': Seluruh aktivitas perolehan poin secara efektif didorong oleh segelintir anggota yang sangat aktif. Anggota-anggota ini direpresentasikan oleh titik-titik data di luar kotak (outliers) yang nilainya jauh melampaui anggota biasa.
-    3. Tier Kartu Menunjukkan Nilai Tertinggi: Para 'super user' dengan akumulasi poin tertinggi sebagian besar terkonsentrasi pada pemegang kartu Star dan Nova. Ini menandakan bahwa pelanggan Anda yang paling bernilai (dalam hal perolehan poin) berada di dua tingkatan kartu tersebut.
-* **Kesimpulan:** 
-Program loyalitas Anda saat ini memiliki tingkat keterlibatan (engagement) yang rendah di kalangan mayoritas anggota. Program ini lebih berfungsi untuk memberi penghargaan kepada sekelompok kecil pelanggan elit yang sudah sangat aktif, daripada mendorong aktivitas bagi seluruh basis anggota.
+* **Graph:**
+    ![Graph of Points Distribution per Card](final_visualizations/points_by_card.png)
+* **Insight Interpretation:**
+    1.  Very Low Activity for the Majority: This graph shows that across all three card types (Aurora, Nova, Star), the vast majority of members (over 75%) have very few or near-zero accumulated points. This is evident from the very short "box" (boxplot) at the bottom of the plot.
 
+    2.  Dominated by 'Super Users': All points earning activity is effectively driven by a handful of highly active members. These members are represented by data points outside the boxes (outliers) whose values far exceed regular members.
 
-### 3. Hubungan Pendidikan dan Jumlah Penerbangan
-* **Pertanyaan:** Apakah ada hubungan antara tingkat pendidikan pelanggan dengan jumlah rata-rata penerbangan yang mereka lakukan?
-* **Query SQL:**
+    3.  Card Tiers Show Highest Value: 'Super users' with the highest accumulated points are largely concentrated among Star and Nova cardholders. This indicates that your most valuable customers (in terms of points earned) are in these two card tiers.
+
+* **Conclusion:**
+    Your current loyalty program has a low level of engagement among the majority of members. The program functions more to reward a small group of elite customers who are already very active, rather than encouraging activity across the entire member base.
+
+### 3. Relationship between Education and Number of Flights
+* **Question:** Is there a relationship between a customer's education level and the average number of flights they take?
+* **SQL Query:**
     ```sql
     SELECT
         Education,
@@ -84,21 +89,23 @@ Program loyalitas Anda saat ini memiliki tingkat keterlibatan (engagement) yang 
     GROUP BY Education
     ORDER BY Avg_Total_Flights_Per_Record DESC
     ```
-* **Grafik:**
-    ![Grafik Penerbangan per Pendidikan](final_visualizations/flights_by_education.png)
-* **Interpretasi Insight:** 
-    1. Tidak Ada Perbedaan yang Berarti: Grafik ini dengan jelas menunjukkan bahwa rata-rata jumlah penerbangan hampir sama di semua tingkat pendidikan. Semua segmen, mulai dari "High School or Below" hingga "Doctor", rata-rata melakukan penerbangan sekitar 12 kali.
-    2. Frekuensi vs. Jarak: Temuan ini sangat menarik jika dibandingkan dengan analisis sebelumnya. Meskipun pelanggan "Doktor" dan "Master" terbang lebih jauh dalam setiap perjalanannya, mereka tidak terbang lebih sering daripada pelanggan dengan tingkat pendidikan lainnya.
-    3. Perilaku yang Seragam: Dalam hal frekuensi atau jumlah penerbangan, semua segmen pelanggan Anda berperilaku sangat seragam.
-* **Kesimpulan:** 
-Tingkat pendidikan bukanlah faktor yang bisa digunakan untuk membedakan seberapa sering seorang pelanggan terbang.
-Implikasinya adalah, jika ingin membuat program untuk meningkatkan frekuensi terbang (misalnya, promo "terbang X kali dapat bonus"), menargetkan pelanggan berdasarkan tingkat pendidikan mereka tidak akan menjadi strategi yang efektif. Semua segmen memiliki potensi yang sama untuk merespons promo semacam ini.
-Ini memperkuat gambaran bahwa pelanggan pascasarjana adalah spesialis penerbangan jarak jauh (long-haul), sementara pelanggan lainnya terbang sama seringnya dengan kombinasi jarak pendek dan jauh.
+* **Graph:**
+    ![Graph of Flights per Education](final_visualizations/flights_by_education.png)
+* **Insight Interpretation:**
+    1.  No Significant Difference: This graph clearly shows that the average number of flights is almost the same across all education levels. All segments, from "High School or Below" to "Doctor", average around 12 flights.
 
+    2.  Frequency vs. Distance: This finding is very interesting when compared to previous analyses. Although "Doctor" and "Master" customers fly more distance on each trip, they do not fly more often than customers with other education levels.
 
-### 4. Tren Penerbangan dari Waktu ke Waktu
-* **Pertanyaan:** Bagaimana tren total jumlah penerbangan secara bulanan dari waktu ke waktu?
-* **Query SQL:**
+    3.  Uniform Behavior: In terms of frequency or number of flights, all your customer segments behave very uniformly.
+
+* **Conclusion:**
+    Education level is not a factor that can be used to differentiate how often a customer flies.
+    The implication is that if you want to create a program to increase flight frequency (e.g., "fly X times get a bonus" promotion), targeting customers based on their education level will not be an effective strategy. All segments have the same potential to respond to such promotions.
+    This reinforces the picture that postgraduate customers are long-haul flight specialists, while other customers fly just as often with a combination of short and long distances.
+
+### 4. Flight Trends Over Time
+* **Question:** What is the trend of the total number of flights monthly over time?
+* **SQL Query:**
     ```sql
     SELECT
         Year,
@@ -108,47 +115,52 @@ Ini memperkuat gambaran bahwa pelanggan pascasarjana adalah spesialis penerbanga
     GROUP BY Year, Month
     ORDER BY Year, Month
     ```
-* **Grafik:**
-    ![Grafik Tren Penerbangan Bulanan](final_visualizations/flight_trends.png)
-* **Interpretasi Insight:** 
-    1. Pola Musiman (Seasonal) yang Kuat: Grafik ini dengan sangat jelas menunjukkan bahwa tren jumlah penerbangan tidak naik atau turun secara linear, melainkan mengikuti pola musiman yang konsisten dan berulang setiap tahunnya.
-    2. Puncak Musim Ramai (High Season): Ada dua periode puncak utama dalam setahun:
-        - Musim Liburan Tengah Tahun (Juni - Agustus): Ini adalah periode tersibuk bagi maskapai, dengan lonjakan tertinggi terjadi pada bulan Agustus.
-        - Musim Liburan Akhir Tahun (Desember): Terjadi lonjakan tajam kedua pada bulan Desember, yang jelas berkaitan dengan libur Natal dan Tahun Baru.
-    3. Periode Sepi (Low Season): Jumlah penerbangan mencapai titik terendahnya pada periode setelah liburan tengah tahun, yaitu sekitar bulan September dan Oktober. Bulan Februari juga menunjukkan penurunan yang cukup signifikan setiap tahunnya.
-* **Kesimpulan:** 
-Bisnis penerbangan ini sangat bergantung pada musim (highly seasonal). Permintaan pelanggan sangat bisa diprediksi, di mana puncaknya terjadi pada pertengahan dan akhir tahun, sementara periode paling sepi adalah di awal musim gugur (September-Oktober).
+* **Graph:**
+    ![Graph of Monthly Flight Trends](final_visualizations/flight_trends.png)
+* **Insight Interpretation:**
+    1.  Strong Seasonal Pattern: This graph clearly shows that the trend in the number of flights does not increase or decrease linearly, but rather follows a consistent and recurring seasonal pattern each year.
 
+    2.  Peak Season (High Season): There are two main peak periods in a year:
+        * Mid-Year Holiday Season (June - August): This is the busiest period for airlines, with the highest surge occurring in August.
+        * Year-End Holiday Season (December): A second sharp surge occurs in December, clearly related to Christmas and New Year holidays.
 
-### 5. Hubungan Gaji dan Jarak Penerbangan
-* **Pertanyaan:** Apakah ada hubungan antara tingkat gaji (`Salary`) seorang pelanggan dengan jarak (`Distance`) penerbangan yang biasa mereka tempuh?
-* **Query SQL:**
+    3.  Low Season: The number of flights reaches its lowest point in the period after the mid-year holidays, around September and October. February also shows a significant decrease each year.
+
+* **Conclusion:**
+    This airline business is highly seasonal. Customer demand is highly predictable, with peaks in the middle and end of the year, while the quietest period is in early autumn (September-October).
+
+### 5. Relationship between Salary and Flight Distance
+* **Question:** Is there a relationship between a customer's `Salary` level and the `Distance` they typically travel?
+* **SQL Query:**
     ```sql
     SELECT
         Salary,
         Distance
     FROM merged_view
     WHERE Salary IS NOT NULL AND Distance > 0
-    LIMIT 5000 
+    LIMIT 5000
     ```
-* **Grafik:**
-    ![Grafik Hubungan Gaji dan Jarak Penerbangan](final_visualizations/salary_vs_distance.png)
-* **Interpretasi Insight:** 
-    1. Sebaran Data Acak: Titik-titik data pada grafik tersebar secara acak dan tidak membentuk pola yang jelas (seperti garis lurus yang menanjak atau menurun).
-    2. Tidak Ada Tren: Ini menunjukkan bahwa kenaikan gaji seorang pelanggan tidak secara otomatis berarti mereka akan melakukan perjalanan yang lebih jauh. Pelanggan dengan gaji rendah bisa saja melakukan penerbangan jarak jauh, dan sebaliknya, pelanggan dengan gaji sangat tinggi bisa saja hanya melakukan penerbangan jarak pendek.
-    3. Gaji Bukan Prediktor Jarak: Tingkat gaji seorang pelanggan terbukti bukanlah sebuah prediktor yang baik untuk memperkirakan seberapa jauh mereka akan terbang dalam suatu perjalanan.
-* **Kesimpulan:** 
-Keputusan seorang pelanggan untuk melakukan penerbangan jarak jauh atau pendek tidak ditentukan oleh tingkat pendapatan mereka.
-Ini menyiratkan bahwa faktor lain—yang tidak terlihat di grafik ini—jauh lebih berpengaruh. Faktor-faktor tersebut kemungkinan besar adalah:
-    - Tujuan Perjalanan: Apakah untuk bisnis, liburan, mengunjungi keluarga, atau lainnya.
-    - Gaya Hidup (Lifestyle): Preferensi personal pelanggan terhadap jenis liburan.
-    - Kebutuhan Pekerjaan: Jenis pekerjaan tertentu mungkin menuntut perjalanan jauh terlepas dari besaran gajinya.
+* **Graph:**
+    ![Graph of Salary and Flight Distance Relationship](final_visualizations/salary_vs_distance.png)
+* **Insight Interpretation:**
+    1.  Random Data Distribution: The data points on the graph are scattered randomly and do not form a clear pattern (such as a rising or falling straight line).
 
-Secara strategis, menggunakan data gaji untuk melakukan segmentasi pelanggan pada penawaran promo penerbangan jarak jauh tidak akan efektif. Segmentasi yang lebih baik seharusnya didasarkan pada histori perjalanan atau perilaku pelanggan itu sendiri.
+    2.  No Trend: This indicates that an increase in a customer's salary does not automatically mean they will travel further. Customers with low salaries may take long-distance flights, and conversely, customers with very high salaries may only take short-distance flights.
 
-### 6. Nilai Tukar Poin
-* **Pertanyaan:** Bagaimana hubungan antara poin yang ditukarkan (`Points_Redeemed`) dengan nilai moneternya dalam dolar (`Dollar_Cost_Points_Redeemed`)?
-* **Query SQL:**
+    3.  Salary Not a Predictor of Distance: A customer's salary level proves not to be a good predictor of how far they will fly on a trip.
+
+* **Conclusion:**
+    A customer's decision to take a long-haul or short-haul flight is not determined by their income level.
+    This implies that other factors—not visible in this graph—are far more influential. These factors are likely:
+        * Purpose of Travel: Whether for business, vacation, visiting family, or otherwise.
+        * Lifestyle: Personal preferences of customers regarding vacation types.
+        * Work Requirements: Certain types of jobs may demand long-distance travel regardless of salary.
+
+    Strategically, using salary data to segment customers for long-haul flight promotions will not be effective. Better segmentation should be based on travel history or customer behavior itself.
+
+### 6. Point Exchange Rate
+* **Question:** What is the relationship between points redeemed (`Points_Redeemed`) and their monetary value in dollars (`Dollar_Cost_Points_Redeemed`)?
+* **SQL Query:**
     ```sql
     SELECT
         Points_Redeemed,
@@ -156,18 +168,21 @@ Secara strategis, menggunakan data gaji untuk melakukan segmentasi pelanggan pad
     FROM flight_activity_view
     WHERE Points_Redeemed > 0
     ```
-* **Grafik:**
-    ![Grafik Nilai Tukar Poin](final_visualizations/points_exchange.png)
-* **Interpretasi Insight:** 
-    1. Hubungan Linier Positif yang Kuat: Titik-titik data pada grafik secara jelas membentuk pola garis lurus yang menanjak dari kiri bawah ke kanan atas. Ini menunjukkan adanya hubungan linier positif yang sangat kuat antara Points_Redeemed dan Dollar_Cost_Points_Redeemed. Artinya, seiring dengan peningkatan jumlah poin yang ditukarkan, nilai moneternya dalam dolar juga meningkat secara proporsional.
-    2. Nilai Tukar Konstan: Garis lurus tersebut menunjukkan bahwa nilai dolar yang diperoleh per poin yang ditukarkan adalah konstan di seluruh rentang data yang diamati. Tidak ada indikasi adanya perubahan nilai tukar (misalnya, menjadi lebih tinggi atau lebih rendah) untuk penukaran poin dalam jumlah tertentu.
-    3. Dapat Diprediksi: Karena hubungannya linier dan konsisten, nilai dolar yang akan didapatkan untuk sejumlah poin tertentu dapat dengan mudah diprediksi. Demikian pula, jumlah poin yang dibutuhkan untuk mencapai nilai dolar tertentu juga dapat dihitung.
-* **Kesimpulan:** 
-Nilai tukar antara poin yang ditukarkan dan nilai moneternya dalam dolar adalah tetap dan seragam. Keputusan untuk menukarkan sejumlah poin tertentu akan menghasilkan nilai dolar yang secara langsung proporsional dengan jumlah poin tersebut. Hal ini menyiratkan bahwa sistem penukaran poin ini beroperasi dengan model nilai tukar yang sangat transparan dan mudah dipahami, di mana setiap poin memiliki "bobot" dolar yang sama, terlepas dari total jumlah poin yang ditukarkan.
+* **Graph:**
+    ![Graph of Point Exchange Rate](final_visualizations/points_exchange.png)
+* **Insight Interpretation:**
+    1.  Strong Positive Linear Relationship: The data points on the graph clearly form a straight line pattern sloping upwards from the bottom left to the top right. This shows a very strong positive linear relationship between Points_Redeemed and Dollar_Cost_Points_Redeemed. This means that as the number of points redeemed increases, their monetary value in dollars also increases proportionally.
 
-### 7. Distribusi Gaji Berdasarkan Pendidikan
-* **Pertanyaan:** Bagaimana perbandingan distribusi gaji (`Salary`) di antara pelanggan dengan tingkat pendidikan (`Education`) yang berbeda-beda?
-* **Query SQL:**
+    2.  Constant Exchange Rate: The straight line indicates that the dollar value obtained per point redeemed is constant across the observed data range. There is no indication of a change in exchange rate (e.g., becoming higher or lower) for specific amounts of point redemption.
+
+    3.  Predictable: Because the relationship is linear and consistent, the dollar value that will be obtained for a certain number of points can be easily predicted. Similarly, the number of points needed to reach a certain dollar value can also be calculated.
+
+* **Conclusion:**
+    The exchange rate between points redeemed and their monetary value in dollars is fixed and uniform. The decision to redeem a certain number of points will result in a dollar value directly proportional to that number of points. This implies that this point redemption system operates with a very transparent and easy-to-understand exchange rate model, where each point has the same dollar "weight", regardless of the total number of points redeemed.
+
+### 7. Salary Distribution by Education
+* **Question:** How does the distribution of salary (`Salary`) compare among customers with different education levels (`Education`)?
+* **SQL Query:**
     ```sql
     SELECT
         Education,
@@ -175,42 +190,56 @@ Nilai tukar antara poin yang ditukarkan dan nilai moneternya dalam dolar adalah 
     FROM merged_view
     WHERE Education IS NOT NULL AND Salary IS NOT NULL
     ```
-* **Grafik:**
-    ![Grafik Distribusi Gaji Berdasarkan Pendidikan](final_visualizations/salary_dist_by_education.png)
-* **Interpretasi Insight:** 
-    1. Gaji Rata-rata Meningkat Seiring Tingkat Pendidikan: Secara umum, ada tren yang jelas bahwa median gaji (garis tengah dalam kotak boxplot) cenderung meningkat seiring dengan peningkatan tingkat pendidikan.
-        - Doctor: Memiliki median gaji tertinggi dan rentang gaji yang paling luas (dari sekitar $50.000 hingga lebih dari $380.000, dengan outlier mencapai $400.000).
-        - Master: Menunjukkan median gaji yang lebih tinggi dari Bachelor, College, dan High School, dengan rentang yang lebih terkonsentrasi di sekitar median.
-        - Bachelor: Memiliki median gaji yang signifikan lebih tinggi dari College dan High School.
-        - College: Memiliki median gaji yang relatif rendah, namun lebih tinggi dari High School or Below.
-        - High School or Below: Menunjukkan median gaji terendah dan rentang interkuartil (IQR) yang paling sempit, mengindikasikan distribusi gaji yang lebih terkonsentrasi pada nilai yang lebih rendah.
-    2. Variabilitas Gaji Berbeda Antar Tingkat Pendidikan:
-        - Doctor dan Bachelor menunjukkan variabilitas gaji yang paling tinggi, ditunjukkan oleh ukuran kotak (IQR) dan rentang whisker yang lebih panjang, serta adanya outlier yang signifikan. Ini berarti ada perbedaan gaji yang lebih besar di antara individu dalam kelompok pendidikan ini.
-        - Master memiliki rentang gaji yang cukup terkonsentrasi di sekitar median, menunjukkan variabilitas yang lebih rendah dibandingkan Doctor dan Bachelor.
-        - College dan High School or Below menunjukkan variabilitas gaji yang paling rendah, dengan kotak dan whisker yang lebih pendek, mengindikasikan bahwa gaji cenderung lebih terkonsentrasi di sekitar median untuk kelompok-kelompok ini.
+* **Graph:**
+    ![Graph of Salary Distribution by Education](final_visualizations/salary_dist_by_education.png)
+* **Insight Interpretation:**
+    1.  Average Salary Increases with Education Level: Generally, there is a clear trend that the median salary (the middle line in the boxplot) tends to increase with higher education levels.
+        * Doctor: Has the highest median salary and the widest salary range (from approximately $50,000 to over $380,000, with outliers reaching $400,000).
+        * Master: Shows a higher median salary than Bachelor, College, and High School, with a range more concentrated around the median.
+        * Bachelor: Has a significantly higher median salary than College and High School.
+        * College: Has a relatively low median salary, but higher than High School or Below.
+        * High School or Below: Shows the lowest median salary and the narrowest interquartile range (IQR), indicating a salary distribution more concentrated at lower values.
 
-    3. Adanya Outlier di Beberapa Tingkat Pendidikan:
-        - Bachelor dan Doctor memiliki sejumlah outlier di bagian bawah dan atas, menunjukkan bahwa ada individu dengan gaji yang jauh di bawah atau di atas sebagian besar rekan mereka dalam tingkat pendidikan yang sama. Outlier di kelompok Doctor juga mencakup gaji yang sangat tinggi, mendekati $400.000.
-        - High School or Below juga memiliki beberapa outlier di bagian bawah, menunjukkan ada individu dengan gaji yang sangat rendah.
-* **Kesimpulan:** 
-Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan merupakan faktor penting yang memengaruhi besaran gaji. Semakin tinggi tingkat pendidikan yang dicapai (terutama hingga gelar Doctor), semakin tinggi pula potensi median gaji yang dapat diperoleh. Selain itu, tingkat pendidikan yang lebih tinggi (seperti Bachelor dan Doctor) juga cenderung memiliki variabilitas gaji yang lebih besar, menunjukkan adanya rentang peluang finansial yang lebih luas di antara individu-individu dengan kualifikasi tersebut. Sebaliknya, tingkat pendidikan yang lebih rendah (seperti High School or Below) cenderung menghasilkan gaji yang lebih rendah dan distribusi gaji yang lebih homogen. Ini menggarisbawahi pentingnya pendidikan dalam potensi penghasilan seseorang.
+    2.  Salary Variability Differs Across Education Levels:
+        * Doctor and Bachelor show the highest salary variability, indicated by the size of the box (IQR) and longer whisker ranges, as well as significant outliers. This means there is a greater difference in salaries among individuals within these education groups.
+        * Master has a salary range quite concentrated around the median, showing lower variability compared to Doctor and Bachelor.
+        * College and High School or Below show the lowest salary variability, with shorter boxes and whiskers, indicating that salaries tend to be more concentrated around the median for these groups.
 
-### 8. Distribusi Gaji Keseluruhan
-* **Pertanyaan:** Bagaimana distribusi pendapatan (`Salary`) keseluruhan pelanggan dalam program loyalitas ini?
-* **Query SQL:**
+    3.  Presence of Outliers at Several Education Levels:
+        * Bachelor and Doctor have a number of outliers at the bottom and top, indicating that there are individuals with salaries significantly below or above most of their peers at the same education level. Outlier in the Doctor group also includes very high salaries, approaching $400,000.
+        * High School or Below also has some outliers at the bottom, indicating individuals with very low salaries.
+
+* **Conclusion:**
+    Based on the salary distribution analysis, it can be concluded that education level is an important factor influencing salary size. The higher the education level achieved (especially up to a Doctor's degree), the higher the potential median salary that can be obtained. In addition, higher education levels (such as Bachelor and Doctor) also tend to have greater salary variability, indicating a wider range of financial opportunities among individuals with these qualifications. Conversely, lower education levels (such as High School or Below) tend to result in lower salaries and a more homogeneous salary distribution. This underscores the importance of education in one's earning potential.
+
+### 8. Overall Salary Distribution
+* **Question:** What is the overall distribution of customer income (`Salary`) in this loyalty program?
+* **SQL Query:**
     ```sql
-    SELECT Salary 
+    SELECT Salary
     FROM merged_view TABLESAMPLE (10 PERCENT)
     WHERE Salary IS NOT NULL
     ```
-* **Hasil:** Sampel 10% dari data gaji pelanggan, digunakan untuk membuat histogram.
-* **Grafik:**
-    ![Grafik Distribusi Gaji Keseluruhan](final_visualizations/salary_distribution.png)
-* **Interpretasi Insight:** Histogram ini memberikan gambaran umum tentang profil ekonomi basis pelanggan. Jika mayoritas pelanggan berada di rentang gaji menengah, maka strategi pemasaran massal lebih efektif. Jika distribusinya condong ke kanan (gaji tinggi), maka fokus pada layanan premium lebih menjanjikan.
+* **Result:** 10% sample of customer salary data, used to create a histogram.
+* **Graph:**
+    ![Graph of Overall Salary Distribution](final_visualizations/salary_distribution.png)
+* **Insight Interpretation:**
+    1.  Right-Skewed Distribution: The shape of the histogram shows that the salary distribution tends to be right-skewed (positively skewed). This means that most customers have salaries in the lower range, while there are a small number of customers with much higher salaries, creating a long "tail" on the right side of the distribution.
 
-### 9. Komposisi Demografis
-* **Pertanyaan:** Bagaimana komposisi status pernikahan (`Marital_Status`) dalam setiap kategori pendidikan (`Education`)?
-* **Query SQL:**
+    2.  Mode (Peak) Around $75,000 - $80,000: The highest peak of the histogram (mode) is around $75,000 to $80,000. This indicates that most customers in this loyalty program have salaries in that range.
+
+    3.  Majority Salary Concentration Below $100,000: The majority of frequencies (number of customers) are concentrated in the salary range below $100,000. After that point, the frequency of customers decreases sharply, although there are some customers with very high salaries.
+
+    4.  Presence of Very High Salaries (Outlier): Although the frequency is low, the distribution shows customers with salaries reaching approximately $400,000. This indicates that this loyalty program successfully attracts a small segment of very high-income individuals.
+
+    5.  Unimodal Shape: This distribution appears unimodal, meaning there is only one dominant peak. This indicates that most customers are clustered around a certain salary level.
+
+* **Conclusion:**
+    Overall, the income distribution of customers in this loyalty program is dominated by individuals with medium to lower-medium salaries, with a peak in the range of $75,000 - $80,000. Nevertheless, the program also successfully attracts a small segment of high-income customers. The implication is that loyalty program strategies may need to consider segmentation based on income levels, as the majority of customers are in a certain salary range, but there is also potential to target high-income segments with appropriate offers.
+
+### 9. Demographic Composition
+* **Question:** What is the composition of marital status (`Marital_Status`) within each education category (`Education`)?
+* **SQL Query:**
     ```sql
     SELECT
         Education,
@@ -221,14 +250,34 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     GROUP BY Education, Marital_Status
     ORDER BY Education, Marital_Status
     ```
-* **Hasil:** Tabel agregat yang menghitung jumlah pelanggan untuk setiap kombinasi pendidikan dan status pernikahan.
-* **Grafik:**
-    ![Grafik Komposisi Demografis](final_visualizations/demographic_composition.png)
-* **Interpretasi Insight:** *Grouped bar chart* dari data ini dapat mengungkap segmen demografis yang dominan. Misalnya, jika ditemukan bahwa segmen "Sarjana & Menikah" sangat besar, maka penawaran liburan keluarga bisa menjadi strategi yang sangat efektif.
+* **Graph:**
+    ![Graph of Demographic Composition](final_visualizations/demographic_composition.png)
+* **Insight Interpretation:**
+    1.  Bachelor:
+        * The Bachelor education category has the largest number of customers overall.
+        * Among Bachelor-educated customers, Married is the most dominant marital status with a very significant number (over 160,000 customers).
+        * Single is in second place, followed by Divorced with a lower number.
 
-### 10. Aktivitas Regional
-* **Pertanyaan:** Provinsi manakah yang mencatatkan total jumlah penerbangan paling banyak?
-* **Query SQL:**
+    2.  College:
+        * The College category is the second largest after Bachelor.
+        * Here, Single is the most dominant marital status (around 55,000 customers), far exceeding Married (around 30,000 customers) and Divorced.
+
+    3.  Doctor, High School or Below, and Master:
+        * These three education categories have significantly fewer customers compared to Bachelor and College.
+        * For Doctor, Married seems slightly more numerous than Single and Divorced, although the numbers are small.
+        * For High School or Below, Married is also dominant compared to Single and Divorced.
+        * For Master, Married and Single have very similar and relatively small numbers, with Divorced being the least.
+
+    4.  Comparison Between Education Categories:
+        * An interesting pattern emerges: While Married dominates in Bachelor, Doctor, and High School or Below education levels, Single dominates at the College level.
+        * The number of customers with Divorced status is relatively consistent and much lower across all education levels compared to Married and Single.
+
+* **Conclusion:**
+    Based on the graph analysis, it can be concluded that the composition of marital status varies greatly across different education levels. "Married" status is most common among customers with Bachelor, Doctor, and High School or Below education. However, for customers with College education, "Single" status is far more dominant. The number of divorced customers is consistently a minority group at all education levels.
+
+### 10. Regional Activity
+* **Question:** Which province recorded the highest total number of flights?
+* **SQL Query:**
     ```sql
     SELECT
         Province,
@@ -238,14 +287,21 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     GROUP BY Province
     ORDER BY Total_Flights_Per_Province DESC
     ```
-* **Hasil:** Tabel peringkat provinsi berdasarkan total penerbangan.
-* **Grafik:**
-    ![Grafik Aktivitas Regional](final_visualizations/regional_activity.png)
-* **Interpretasi Insight:** Ini secara langsung menunjukkan pasar geografis terpenting. Provinsi dengan total penerbangan tertinggi adalah area kunci di mana investasi pemasaran, peningkatan layanan bandara, dan frekuensi penerbangan harus diprioritaskan.
+* **Graph:**
+    ![Graph of Regional Activity](final_visualizations/regional_activity.png)
+* **Insight Interpretation:**
+    1.  Concentration of Flights in Several Key Provinces: This graph clearly shows that most flight activity is concentrated in a few provinces. Ontario is at the top with a very dominant number of flights (over 160,000), followed by British Columbia (around 135,000) and Quebec (around 100,000). These three provinces account for the largest portion of total flights.
 
-### 11. Nilai Penukaran Poin per Wilayah
-* **Pertanyaan:** Berapa total nilai dolar dari poin yang ditukarkan untuk setiap provinsi?
-* **Query SQL:**
+    2.  Significant Decline After the Top Three: There is a drastic drop in the number of flights after the top three provinces. Provinces such as Alberta (around 28,000) and so on have significantly fewer flights compared to Ontario, British Columbia, and Quebec.
+
+    3.  Low Flight Activity in Other Provinces: Provinces such as New Brunswick, Manitoba, Nova Scotia, Saskatchewan, Newfoundland, Yukon, and Prince Edward Island recorded very low numbers of flights, with Prince Edward Island having the lowest number.
+
+* **Conclusion:**
+    In conclusion, flight activity in the surveyed region is highly geographically concentrated. Ontario province is the main flight activity center, followed by British Columbia and Quebec. The majority of other provinces have significantly fewer flights, indicating that air mobility is largely dominated by a few large regional centers. This implies that if there are strategies related to flight frequency or air travel needs, the main focus should be on these high-volume provinces.
+
+### 11. Point Redemption Value per Region
+* **Question:** What is the total dollar value of points redeemed for each province?
+* **SQL Query:**
     ```sql
     SELECT
         Province,
@@ -255,14 +311,23 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     GROUP BY Province
     ORDER BY Total_Redemption_Value DESC
     ```
-* **Hasil:** Peringkat provinsi berdasarkan total nilai penukaran poin.
-* **Grafik:**
-    ![Grafik Nilai Penukaran Poin per Wilayah](final_visualizations/regional_redemption.png)
-* **Interpretasi Insight:** Analisis ini menunjukkan di mana pelanggan paling aktif menggunakan poin mereka. Jika suatu wilayah memiliki aktivitas penerbangan tinggi tetapi nilai penukaran rendah, ini bisa menjadi peluang untuk meluncurkan kampanye promosi penukaran poin di wilayah tersebut.
+* **Graph:**
+    ![Graph of Point Redemption Value per Region](final_visualizations/regional_redemption.png)
+* **Insight Interpretation:**
+    1.  Redemption Value Concentrated in Three Main Provinces: Similar to flight activity, the point redemption value (Total Redemption Value) is also highly concentrated in three major provinces: Ontario (around $710,000), British Columbia (around $580,000), and Quebec (around $440,000). These three provinces account for the majority of the total redemption value.
 
-### 12. Demografi Finansial
-* **Pertanyaan:** Berapakah rata-rata gaji pelanggan berdasarkan status pernikahan?
-* **Query SQL:**
+    2.  Drastic Decline After the Top Three: After Quebec, there is a very significant decrease in point redemption value. Other provinces such as Alberta (around $120,000) and so on have much lower redemption values.
+
+    3.  Low Point Redemption Activity in Smaller Provinces: Provinces like Newfoundland, Yukon, and Prince Edward Island show the lowest point redemption values, which is consistent with the low number of flights in those areas.
+
+    4.  Positive Correlation between Flights and Point Redemption: There is a clear correlation between provinces with high flight numbers and provinces with high point redemption values. This indicates that customers in more active flight regions tend to also be more active in redeeming their points.
+
+* **Conclusion:**
+    In conclusion, the point redemption value of this loyalty program is largely dominated by customers in Ontario, British Columbia, and Quebec provinces. This pattern is very similar to the distribution of total flights, indicating that provinces with high air travel activity are also the largest contributors to point redemption. This implies that this loyalty program is most effective and attractive to customers in large population and economic centers.
+
+### 12. Financial Demographics
+* **Question:** What is the average salary of customers based on marital status?
+* **SQL Query:**
     ```sql
     SELECT
         Marital_Status,
@@ -272,14 +337,22 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     GROUP BY Marital_Status
     ORDER BY Average_Salary DESC
     ```
-* **Hasil:** Tabel yang menunjukkan rata-rata gaji untuk setiap status pernikahan.
-* **Grafik:**
-    ![Grafik Demografi Finansial](final_visualizations/avg_salary_by_marital_status.png)
-* **Interpretasi Insight:** Membantu memahami daya beli dari segmen demografis yang berbeda. Jika pelanggan yang 'Menikah' memiliki rata-rata pendapatan tertinggi, ini memperkuat ide untuk menargetkan mereka dengan produk-produk bernilai tambah tinggi.
+* **Graph:**
+    ![Graph of Financial Demographics](final_visualizations/avg_salary_by_marital_status.png)
+* **Insight Interpretation:**
+    1.  Divorced Customers Have the Highest Average Salary: The graph shows that customers with Divorced marital status have the highest average salary, around $82,000.
 
-### 13. Komposisi Pelanggan Berdasarkan Jenis Kelamin
-* **Pertanyaan:** Bagaimana proporsi pelanggan berdasarkan jenis kelamin (`Gender`)?
-* **Query SQL:**
+    2.  Relatively Small Average Salary Differences: Although there are differences, the average salaries among the three marital status groups (Divorced, Married, Single) do not show very significant differences.
+        * Married has an average salary slightly below Divorced, which is around $78,000.
+        * Single has the lowest average salary among the three, which is around $75,000.
+    3.  Marital Status Not a Strong Predictor of Salary: The relatively small differences in average salaries between groups indicate that marital status, based on this data, is not a very strong determinant or predictor of an individual's salary in this loyalty program. Other factors (such as education, experience, type of work, etc.) likely have a greater influence on salary.
+
+* **Conclusion:**
+    There are slight differences in average salaries among customers based on their marital status, with divorced individuals having a slightly higher average salary. However, this difference is not substantial, indicating that marital status alone does not significantly determine income levels within this customer group. Therefore, if marketing or customer segmentation strategies are to be based on income, relying solely on marital status might not be effective.
+
+### 13. Customer Composition by Gender
+* **Question:** What is the proportion of customers based on gender (`Gender`)?
+* **SQL Query:**
     ```sql
     SELECT
         Gender,
@@ -288,14 +361,19 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     WHERE Gender IS NOT NULL
     GROUP BY Gender
     ```
-* **Hasil:** Jumlah pelanggan untuk setiap jenis kelamin.
-* **Grafik:**
-    ![Grafik Komposisi Pelanggan Berdasarkan Jenis Kelamin](final_visualizations/gender_composition.png)
-* **Interpretasi Insight:** *Pie chart* dari data ini memberikan gambaran cepat tentang komposisi gender pelanggan. Informasi ini dapat digunakan untuk menyesuaikan gaya komunikasi dan visual dalam materi pemasaran agar lebih relevan bagi audiens mayoritas.
+* **Graph:** <br>
+    ![Graph of Customer Composition by Gender](final_visualizations/gender_composition.png)
+* **Insight Interpretation:**
+    1.  Nearly Balanced Distribution: The pie chart clearly shows that the proportion of customers by gender is very close to balanced. Male customers are slightly under half of the total (49.8%), while female customers are slightly over half (50.2%).
 
-### 14. Keterlibatan Tier Loyalitas
-* **Pertanyaan:** Manakah jenis kartu loyalitas (`Loyalty_Card`) yang anggotanya secara kolektif menempuh total jarak (`Distance`) penerbangan paling jauh?
-* **Query SQL:**
+    2.  Slight Female Dominance: Although the difference is very slight, female customers have a slight dominance in the customer composition compared to male customers.
+
+* **Conclusion:**
+    The gender composition of this loyalty program's customers is very balanced, with the number of female customers slightly exceeding male customers. This minimal difference indicates that the loyalty program appeals to both genders equally, without any significant bias towards a particular gender. This means that general (non-gender-specific) marketing and product strategies will likely be effective for the majority of the customer base.
+
+### 14. Loyalty Tier Engagement
+* **Question:** Which loyalty card type (`Loyalty_Card`) has members who collectively travel the furthest total distance (`Distance`)?
+* **SQL Query:**
     ```sql
     SELECT
         Loyalty_Card,
@@ -305,7 +383,16 @@ Berdasarkan analisis distribusi gaji, dapat disimpulkan bahwa tingkat pendidikan
     GROUP BY Loyalty_Card
     ORDER BY Total_Distance_Flown DESC
     ```
-* **Hasil:** Peringkat jenis kartu loyalitas berdasarkan total jarak terbang.
-* **Grafik:**
-    ![Grafik Keterlibatan Tier Loyalitas](final_visualizations/tier_engagement_by_distance.png)
-* **Interpretasi Insight:** Analisis ini memvalidasi efektivitas program tingkatan (tier) loyalitas. Jika anggota dengan status kartu lebih tinggi (misal: 'Aurora') memang terbang lebih jauh secara signifikan, ini menunjukkan bahwa program insentif untuk mencapai tier yang lebih tinggi berhasil mendorong perilaku pelanggan yang diinginkan.
+* **Graph:**
+    ![Graph of Loyalty Tier Engagement](final_visualizations/tier_engagement_by_distance.png)
+* **Insight Interpretation:**
+    1.  "Star" Tier is the Most Active: Members with the Star loyalty card collectively traveled the furthest flight distance, around 350 million miles. This indicates that the "Star" customer segment travels most frequently and/or travels long distances.
+
+    2.  "Nova" Tier in Second Place: The Nova tier is in second place with a significant total distance, around 260 million miles. This indicates that Nova members are also active travelers, although not as intensely as Star members.
+
+    3.  "Aurora" Tier Travels the Least Distance: Members with the Aurora loyalty card traveled the least total flight distance, around 160 million miles. This indicates that the Aurora segment tends to be less active in taking flights or travels shorter distances compared to the other two tiers.
+
+    4.  Clear Hierarchy in Flight Distance: There is a clear hierarchy in total flight distance among loyalty tiers, with Star at the top, followed by Nova, and then Aurora. This implies that these loyalty tiers are successful in identifying and grouping customers based on their travel activity levels.
+
+* **Conclusion:**
+    This loyalty program successfully identifies and incentivizes the most frequent travelers. Customers in the "Star" tier are the most valuable segment in terms of total flight distance, followed by "Nova", and then "Aurora". This shows that the loyalty tiering system effectively reflects and perhaps also encourages different levels of customer engagement in terms of travel frequency and distance. The program should focus on retaining and rewarding Star and Nova members, as they are the largest contributors to total flight distance.

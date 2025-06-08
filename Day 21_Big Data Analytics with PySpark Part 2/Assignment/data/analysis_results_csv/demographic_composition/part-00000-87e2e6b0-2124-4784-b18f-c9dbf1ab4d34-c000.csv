@@ -1,0 +1,16 @@
+Education,Marital_Status,Customer_Count_Per_Segment
+Bachelor,Divorced,38306
+Bachelor,Married,166011
+Bachelor,Single,39962
+College,Divorced,8782
+College,Married,33546
+College,Single,56808
+Doctor,Divorced,4266
+Doctor,Married,10868
+Doctor,Single,2174
+High School or Below,Divorced,2904
+High School or Below,Married,12107
+High School or Below,Single,3246
+Master,Divorced,4475
+Master,Married,4980
+Master,Single,2579

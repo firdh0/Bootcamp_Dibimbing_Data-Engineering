@@ -92,7 +92,7 @@ Below are the details of **all 14 analyses** performed, along with the SQL queri
 * **Graph:**
     ![Graph of Flights per Education](final_visualizations/flights_by_education.png)
 * **Insight Interpretation:**
-    1.  No Significant Difference: This graph clearly shows that the average number of flights is almost the same across all education levels. All segments, from "High School or Below" to "Doctor", average around 12 flights.
+    1.  No Significant Difference: This graph clearly shows that the average number of flights is almost the same across all education levels. All segments, from "High School or Below" to "Doctor", average around 1.2 flights.
 
     2.  Frequency vs. Distance: This finding is very interesting when compared to previous analyses. Although "Doctor" and "Master" customers fly more distance on each trip, they do not fly more often than customers with other education levels.
 

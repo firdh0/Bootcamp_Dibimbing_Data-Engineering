@@ -41,15 +41,6 @@ Below are the details of **all 14 analyses** performed, along with the SQL queri
     GROUP BY Loyalty_Number, Year
     ORDER BY Loyalty_Number, Year
     ```
-* **Insight Interpretation:**
-    1.  Largest Contributor: Customers with a Bachelor's degree collectively contribute the most to the total flight distance.
-
-    2.  Main Reason: This high number is likely not because each individual in this segment flies further, but because the number of customers in the "Bachelor" segment is the largest in the dataset. This graph shows the total (cumulative) value, not the average per customer.
-
-    3.  High-Value Segments (Potential): The low total distance from "Master" and "Doctor" segments is likely due to their smaller population numbers. It's possible that if averaged, these segments would have the highest travel value per individual.
-
-* **Conclusion:**
-    By volume, the "Bachelor" customer segment is the most important mass market as they generate the largest total mileage. However, for more specific strategies such as premium offers or tiered loyalty programs, relying on this total data could be misleading.
 
 ### 2. Points Distribution by Loyalty Card
 * **Question:** How is the total points accumulated by customers distributed based on their loyalty card type?

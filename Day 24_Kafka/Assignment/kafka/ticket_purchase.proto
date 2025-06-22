@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message TicketPurchase {
+    string purchase_id = 1;         // ID unik untuk setiap transaksi
+    string user_id = 2;             // ID pengguna yang membeli
+    string user_name = 3;           // Nama pengguna
+    string ticket_tier = 4;         // Tipe tiket: ACE, KING, QUEEN, JACK
+    string purchase_type = 5;       // Tipe pembelian: OFC Pre-Sale, General
+    int64 price = 6;                // Harga per tiket dalam Rupiah
+    int32 quantity = 7;             // Jumlah tiket yang dibeli
+    int64 purchase_timestamp = 8;   // Waktu pembelian (Unix timestamp)
+}

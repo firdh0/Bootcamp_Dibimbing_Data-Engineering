@@ -1,32 +1,77 @@
 from __future__ import annotations
 
 import pendulum
+import logging
 
-from airflow.models.dag import DAG
+from airflow.decorators import dag, task
+from airflow.models.param import Param
+from airflow.operators.empty import EmptyOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 
-# Mendefinisikan DAG untuk proses ETL Customer Analytics
-with DAG(
+try:
+    from send_notification_to_email import send_dag_notification
+except ImportError:
+    logging.warning("File send_notification_to_email.py tidak ditemukan. Notifikasi email dinonaktifkan.")
+
+@dag(
     dag_id="customer_analytics_etl_dag_2",
-    schedule="@daily",  # Menjadwalkan DAG untuk berjalan setiap hari
+    schedule=None,
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
+    on_success_callback=send_dag_notification,
+    on_failure_callback=send_dag_notification,
     catchup=False,
     doc_md="""
-    ### Customer Analytics ETL DAG
+    ### Customer Analytics Dynamic ETL DAG (TaskFlow API Version)
+
+    This DAG fully utilizes the TaskFlow API and has a Start -> Job -> End structure.
     
-    DAG ini menjalankan proses ETL pada data pelanggan yang telah dibersihkan:
-    1.  **Extract**: Membaca data Parquet (aktivitas, loyalitas, kalender).
-    2.  **Transform**: Menggabungkan dataset dan menghitung ringkasan per pelanggan (total penerbangan, jarak, poin).
-    3.  **Load**: Menyimpan hasil agregasi ke dalam tabel di Data Warehouse PostgreSQL.
+    You can choose the 'Load' method when triggering the DAG:
+    - **spark_jdbc**: Transformations are done in Spark.
+    - **postgres_pushdown**: Transformations are done with a query in PostgreSQL.
+
+    Use the 'Trigger DAG w/ config' menu to choose the method.
     """,
-    tags=["assignment", "pyspark", "etl"],
-) as dag:
-    # Operator untuk menjalankan skrip PySpark
-    run_customer_analytics_job = SparkSubmitOperator(
-        task_id="run_customer_analytics_job_2",
-        # Path ini menunjuk ke skrip PySpark di dalam kontainer
-        application="/spark-scripts/assignment_etl.py",
-        # Menggunakan koneksi 'spark_main' yang dibuat oleh entrypoint.sh
+    params={
+        "load_method": Param(
+            "spark_jdbc", # Default value
+            type="string",
+            title="Load Method",
+            description="Select a method to perform the transformation and load the data.",
+            enum=["spark_jdbc", "postgres_pushdown"],
+        )
+    },
+    tags=["assignment", "pyspark", "postgresql", "etl", "notification_to_email"],
+)
+def customer_analytics_etl_pipeline() -> None:
+    """
+    Defines the Customer Analytics ETL DAG using Airflow's TaskFlow API.
+
+    The pipeline includes:
+        - A start marker task.
+        - A Spark job submission task to run a PySpark ETL script with configurable parameters.
+        - An end marker task.
+
+    The DAG supports two transformation modes:
+        - 'spark_jdbc': Transformation is done in Spark.
+        - 'postgres_pushdown': Transformation is delegated to PostgreSQL using SQL.
+
+    Returns:
+        None
+    """
+
+    start = EmptyOperator(task_id="start_pipeline_2")
+
+    spark_etl = SparkSubmitOperator(
+        task_id="etl_pipeline_2",
+        application="/spark-scripts/versi_2/assignment_etl.py",
         conn_id="spark_main",
         packages="org.postgresql:postgresql:42.3.8",
+        application_args=["{{ params.load_method }}"],
     )
+
+    end = EmptyOperator(task_id="end_pipeline_2")
+
+    start >> spark_etl >> end
+
+
+customer_analytics_etl_pipeline()

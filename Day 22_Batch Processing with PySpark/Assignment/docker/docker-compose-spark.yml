@@ -13,7 +13,7 @@ services:
             - ../spark-scripts:/spark-scripts
             - ../scripts:/scripts
             - ../logs:/tmp
-            - ../data:/data
+            - ../data:/data 
         ports:
             - ${SPARK_MASTER_UI}:8080
             - ${SPARK_MASTER_PORT}:7077
@@ -34,7 +34,7 @@ services:
             - ../spark-scripts:/spark-scripts
             - ../scripts:/scripts
             - ../logs:/tmp
-            - ../data:/data
+            - ../data:/data 
         depends_on:
             - dibimbing-dataeng-spark-master
 

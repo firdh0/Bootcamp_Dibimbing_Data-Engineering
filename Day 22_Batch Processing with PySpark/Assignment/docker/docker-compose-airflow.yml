@@ -16,6 +16,14 @@ services:
             - POSTGRES_PORT=${POSTGRES_PORT}
             - SPARK_MASTER_HOST_NAME=${SPARK_MASTER_HOST_NAME}
             - SPARK_MASTER_PORT=${SPARK_MASTER_PORT}
+            - AIRFLOW__SMTP__SMTP_HOST=${SMTP_HOST}
+            - AIRFLOW__SMTP__SMTP_PORT=${SMTP_PORT}
+            - AIRFLOW__SMTP__SMTP_USER=${SMTP_USER}
+            - AIRFLOW__SMTP__SMTP_PASSWORD=${SMTP_PASSWORD}
+            - AIRFLOW__SMTP__SMTP_STARTTLS=${SMTP_STARTTLS}
+            - AIRFLOW__SMTP__SMTP_SSL=${SMTP_SSL}
+            - AIRFLOW__SMTP__SMTP_MAIL_FROM=${SMTP_MAIL_FROM}
+            - AIRFLOW_VAR_EMAIL_RECIPIENTS=${NOTIFICATION_EMAILS}
         volumes:
             - ../dags:/opt/airflow/dags
             - ../logs:/opt/airflow/logs
@@ -42,6 +50,14 @@ services:
             - POSTGRES_PORT=${POSTGRES_PORT}
             - SPARK_MASTER_HOST_NAME=${SPARK_MASTER_HOST_NAME}
             - SPARK_MASTER_PORT=${SPARK_MASTER_PORT}
+            - AIRFLOW__SMTP__SMTP_HOST=${SMTP_HOST}
+            - AIRFLOW__SMTP__SMTP_PORT=${SMTP_PORT}
+            - AIRFLOW__SMTP__SMTP_USER=${SMTP_USER}
+            - AIRFLOW__SMTP__SMTP_PASSWORD=${SMTP_PASSWORD}
+            - AIRFLOW__SMTP__SMTP_STARTTLS=${SMTP_STARTTLS}
+            - AIRFLOW__SMTP__SMTP_SSL=${SMTP_SSL}
+            - AIRFLOW__SMTP__SMTP_MAIL_FROM=${SMTP_MAIL_FROM}
+            - AIRFLOW_VAR_EMAIL_RECIPIENTS=${NOTIFICATION_EMAILS}
         volumes:
             - ../dags:/opt/airflow/dags
             - ../logs:/opt/airflow/logs

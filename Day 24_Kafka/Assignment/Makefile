@@ -178,6 +178,14 @@ kafka-create-topic:
 		--replication-factor 1 \
 		--topic ${topic}
 
+ksql-run-script:
+	@echo '__________________________________________________________'
+	@echo 'Executing KSQL script file from ticket_analytics.ksql.sql...'
+	@echo '__________________________________________________________'
+	@docker exec -it ksqldb-cli \
+		ksql http://ksqldb-server:8088 \
+		--file /etc/ksql/scripts/ticket_analytics.ksql.sql
+
 spark-produce:
 	@echo '__________________________________________________________'
 	@echo 'Producing fake events ...'

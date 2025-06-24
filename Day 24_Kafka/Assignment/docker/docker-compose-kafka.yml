@@ -62,6 +62,8 @@ services:
     container_name: ksqldb-cli
     depends_on:
       - ksqldb-server
+    volumes: 
+      - ../kafka:/etc/ksql/scripts
     entrypoint: /bin/sh
     tty: true
 

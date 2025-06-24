@@ -172,10 +172,10 @@ kafka-create-test-topic:
 
 kafka-create-topic:
 	@docker exec ${KAFKA_CONTAINER_NAME} \
-		kafka-topics.sh --create \
+		kafka-topics --create \
+		--bootstrap-server localhost:29092 \
 		--partitions ${partition} \
-		--replication-factor ${KAFKA_REPLICATION} \
-		--bootstrap-server localhost:9092 \
+		--replication-factor 1 \
 		--topic ${topic}
 
 spark-produce:

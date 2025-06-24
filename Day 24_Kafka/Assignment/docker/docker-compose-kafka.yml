@@ -1,65 +1,84 @@
 services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    container_name: zookeeper
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
   kafka:
-    image: docker.io/bitnami/kafka:3.3
+    image: confluentinc/cp-kafka:7.3.2
     container_name: ${KAFKA_CONTAINER_NAME}
     hostname: ${KAFKA_HOST}
+    depends_on:
+      - zookeeper
     ports:
-      - "29092:9092"
-    volumes:
-      - ../streaming-practice:/streaming-practice
+      - "9092:9092"
     environment:
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_ENABLE_KRAFT=yes
-      - KAFKA_CFG_PROCESS_ROLES=broker,controller
-      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9094
-      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
-      - KAFKA_CFG_BROKER_ID=1
-      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@${KAFKA_HOST}:9094
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://${KAFKA_HOST}:9092
-      - KAFKA_CFG_NODE_ID=1
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${KAFKA_HOST}:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
 
-  schema-registry: 
+  schema-registry:
     image: confluentinc/cp-schema-registry:7.3.2
-    container_name: ${SCHEMA_REG_CONTAINER_NAME}
-    hostname: ${SCHEMA_REG_HOST}
+    container_name: dataeng-schema-registry
+    hostname: dataeng-schema-registry
     depends_on:
       - kafka
     ports:
       - "8085:8081"
     environment:
-      - SCHEMA_REGISTRY_HOST_NAME=dataeng-schema-registry
-      - SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=dataeng-kafka:9092
-      - SCHEMA_REGISTRY_LISTENERS=http://0.0.0.0:8081
+      SCHEMA_REGISTRY_HOST_NAME: dataeng-schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: '${KAFKA_HOST}:29092'
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
 
-  ksqldb:
-    image: "bitnami/ksql:7.4"
-    container_name: ${KSQL_CONTAINER_NAME}
-    hostname: ${KSQL_HOST}
+  ksqldb-server:
+    image: confluentinc/cp-ksqldb-server:7.3.2
+    container_name: ksqldb-server
+    hostname: ksqldb-server
     depends_on:
       - kafka
+      - schema-registry
     ports:
       - "8088:8088"
     environment:
-      - KSQL_BOOTSTRAP_SERVERS=${KAFKA_HOST}:9092
-      - KSQL_CLIENT_AUTHENTICATION=none
-      - KSQL_KSQL_SCHEMA_REGISTRY_URL=http://${SCHEMA_REG_HOST}:8081
+      KSQL_LISTENERS: http://0.0.0.0:8088
+      KSQL_BOOTSTRAP_SERVERS: ${KAFKA_HOST}:29092
+      KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE: "true"
+      KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE: "true"
+      KSQL_KSQL_SCHEMA_REGISTRY_URL: http://dataeng-schema-registry:8081
+
+  ksqldb-cli:
+    image: confluentinc/cp-ksqldb-cli:7.3.2
+    container_name: ksqldb-cli
+    depends_on:
+      - ksqldb-server
+    entrypoint: /bin/sh
+    tty: true
 
   kafka-ui:
     image: provectuslabs/kafka-ui:v0.7.0
     container_name: kafka-ui
     depends_on:
       - kafka
-      - ksqldb
       - schema-registry
+      - ksqldb-server
     ports:
       - "8083:8080"
-    restart: "no"
     environment:
-      - KAFKA_CLUSTERS_0_NAME=local
-      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=${KAFKA_HOST}:9092
-      - KAFKA_CLUSTERS_0_KSQLDBSERVER=http://${KSQL_HOST}:8088
-      - KAFKA_CLUSTERS_0_SCHEMAREGISTRY=http://${SCHEMA_REG_HOST}:8081
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: ${KAFKA_HOST}:29092
+      KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://dataeng-schema-registry:8081
+      KAFKA_CLUSTERS_0_KSQLDBSERVER: http://ksqldb-server:8088
 
 networks:
   default:

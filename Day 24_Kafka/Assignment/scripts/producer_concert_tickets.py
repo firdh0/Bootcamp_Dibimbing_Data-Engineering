@@ -76,7 +76,7 @@ while True:
         )
         producer.poll(0) 
         
-        sleep(random.uniform(1, 4)) 
+        sleep(5) 
 
     except KeyboardInterrupt:
         print("Stopping producer...")

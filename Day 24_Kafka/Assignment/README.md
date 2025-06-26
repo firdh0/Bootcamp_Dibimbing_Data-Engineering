@@ -153,7 +153,7 @@ In another terminal to view results, run:
 ```bash
 make ksql-run-script
 ```
-
+![Result](./images/Screenshot%202025-06-24%20214852.png)
 ---
 
 ### 👀 Step 3: Monitor Results & Stop

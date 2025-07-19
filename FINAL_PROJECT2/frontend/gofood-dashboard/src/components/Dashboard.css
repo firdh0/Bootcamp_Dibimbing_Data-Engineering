@@ -1,0 +1,91 @@
+/* frontend/gofood-dashboard/src/components/Dashboard.css */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1400px; /* Lebarkan sedikit untuk chart */
+    margin: 0 auto;
+    background-color: #f0f2f5; /* Background yang lebih terang */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h2, h3 {
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.dashboard-container p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.dashboard-container pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    border: 1px solid #e0e0e0;
+}
+
+/* Card styling for better visual separation */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #007bff; /* Warna judul card */
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #343a40;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.chart-container {
+    position: relative;
+    height: 450px; /* Tinggi chart yang lebih baik */
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #ffffff; /* Pastikan chart memiliki background putih */
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* Sedikit shadow internal */
+}

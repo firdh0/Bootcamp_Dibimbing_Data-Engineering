@@ -1,0 +1,17 @@
+# Dockerfile.spark
+# GANTI BASE IMAGE KE APACHE SPARK RESMI
+FROM apache/spark:3.5.1-java17
+
+USER root
+
+RUN apt-get update && apt-get install -y curl
+
+RUN curl -L https://repo1.maven.org/maven2/com/google/cloud/bigdataoss/gcs-connector/hadoop3-2m.2.9/gcs-connector-hadoop3-2.2.9-shaded.jar -o /opt/spark/jars/gcs-connector-hadoop3-2.2.9-shaded.jar
+
+RUN curl -L https://jdbc.postgresql.org/download/postgresql-42.2.18.jar -o /opt/spark/jars/postgresql-42.2.18.jar
+
+RUN pip install \
+    pandas \
+    python-dotenv==0.20.0
+
+COPY ./.env /opt/app/.env

@@ -1,0 +1,79 @@
+/* frontend/gofood-dashboard/src/App.css */
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.App-header h1 {
+    margin: 0;
+}
+.App-header button {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.App-header button:hover {
+    background-color: #21a1f1;
+    color: white;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left; /* Sesuaikan jika ingin konten di tengah */
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: 20px auto;
+  max-width: 90%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #e9ecef;
+  font-weight: bold;
+  color: #333;
+}
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px; /* Sesuaikan tinggi chart */
+    width: 100%;
+    margin: 20px 0;
+}

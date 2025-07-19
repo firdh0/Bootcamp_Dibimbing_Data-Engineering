@@ -1,0 +1,38 @@
+FROM apache/airflow:2.9.1-python3.10
+USER root
+
+# Install OpenJDK-11
+RUN apt update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get install -y ant && \
+    apt-get install -y procps && \
+    apt-get clean;
+
+# Set JAVA_HOME
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+RUN export JAVA_HOME
+
+RUN apt-get update && apt-get install -y locales && \
+    locale-gen C.UTF-8 && \
+    /usr/sbin/update-locale LANG=C.UTF-8 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
+RUN mkdir -p /opt/airflow/jars/
+
+RUN curl -L https://repo1.maven.org/maven2/com/google/cloud/bigdataoss/gcs-connector/hadoop3-2.2.9/gcs-connector-hadoop3-2.2.9-shaded.jar -o /opt/airflow/jars/gcs-connector-hadoop3-2.2.9-shaded.jar
+
+USER airflow
+
+RUN --mount=type=cache,target=/home/airflow/.cache/pip,uid=50000,gid=0 \
+    pip install \
+    "apache-airflow-providers-apache-spark" \
+    "requests" \
+    "pandas" \
+    "apache-airflow-providers-docker" \
+    "apache-airflow-providers-google[gcs,bigquery]" \
+    "pyspark" \
+    --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-3.10.txt"
+
+COPY --chown=airflow:root ./dags /opt/airflow/dags

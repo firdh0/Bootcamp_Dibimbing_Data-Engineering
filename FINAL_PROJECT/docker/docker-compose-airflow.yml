@@ -16,6 +16,7 @@ services:
             - POSTGRES_PORT=${POSTGRES_PORT}
             - SPARK_MASTER_HOST_NAME=${SPARK_MASTER_HOST_NAME}
             - SPARK_MASTER_PORT=${SPARK_MASTER_PORT}
+            - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
         volumes:
             - ../dags:/opt/airflow/dags
             - ../logs:/opt/airflow/logs
@@ -42,6 +43,7 @@ services:
             - POSTGRES_PORT=${POSTGRES_PORT}
             - SPARK_MASTER_HOST_NAME=${SPARK_MASTER_HOST_NAME}
             - SPARK_MASTER_PORT=${SPARK_MASTER_PORT}
+            - AIRFLOW__WEBSERVER__SECRET_KEY=${AIRFLOW__WEBSERVER__SECRET_KEY}
         volumes:
             - ../dags:/opt/airflow/dags
             - ../logs:/opt/airflow/logs

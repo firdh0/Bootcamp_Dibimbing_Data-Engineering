@@ -15,6 +15,7 @@ services:
       - ../scripts:/scripts
       - ../logs:/tmp
       - ../streaming-practice:/opt/bitnami/spark/streaming-practice
+      - ../data:/data
     ports:
       - ${SPARK_MASTER_UI}:8080
       - ${SPARK_MASTER_PORT}:7077
@@ -37,6 +38,7 @@ services:
       - ../scripts:/scripts
       - ../logs:/tmp
       - ../streaming-practice:/opt/bitnami/spark/streaming-practice
+      - ../data:/data
     depends_on:
       - dibimbing-dataeng-spark-master
 

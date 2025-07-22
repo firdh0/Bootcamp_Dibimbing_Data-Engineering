@@ -12,9 +12,7 @@ help:
 
 docker-build-slim:
 	@chmod 777 logs/
-	@chmod 777 notebooks/
 	@docker network inspect dataeng-network >/dev/null 2>&1 || docker network create dataeng-network
-	@docker build -t dataeng-dibimbing/jupyter -f ./docker/Dockerfile.jupyter .
 
 docker-build-slim-windows:
 	@docker build -t dataeng-dibimbing/jupyter -f ./docker/Dockerfile.jupyter .
@@ -24,14 +22,11 @@ docker-build: build-scraper
 	@echo 'Building Docker Images ...'
 	@echo '__________________________________________________________'
 	@chmod 777 logs/
-	@chmod 777 notebooks/
 	@docker network inspect dataeng-network >/dev/null 2>&1 || docker network create dataeng-network
 	@echo '__________________________________________________________'
 	@docker build --no-cache -t dataeng-dibimbing/spark -f ./docker/Dockerfile.spark .
 	@echo '__________________________________________________________'
 	@docker build --no-cache -t dataeng-dibimbing/airflow -f ./docker/Dockerfile.airflow .
-# 	@echo '__________________________________________________________'
-# 	@docker build --no-cache -t dataeng-dibimbing/jupyter -f ./docker/Dockerfile.jupyter .
 	@echo '==========================================================='
 
 docker-build-windows:

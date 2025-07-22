@@ -6,30 +6,22 @@ dags/*
 !dags/*.py
 secrets/
 
-# Folder dependensi Node.js
 node_modules/
 
-# File environment variables
 .env
 
-# Folder log
 logs/
 
-# Folder yang berisi data rahasia
 secret/
 secrets/
 
-# Konfigurasi IDE/Editor
 .idx/
 .vscode/
 .idea/
 
-# Folder data (opsional, jika datanya besar)
 data/
 
-# Checkpoints dari Jupyter Notebook
 .ipynb_checkpoints/
 
-# File sistem operasi
 .DS_Store
 Thumbs.db

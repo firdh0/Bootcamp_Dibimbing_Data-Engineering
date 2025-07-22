@@ -561,6 +561,7 @@ class SparkTransformer:
             df.write.mode("overwrite").parquet(output_path)
             print(f"✅ The table ‘{name}’ has been successfully saved in {output_path}")
 
+
     def run(self) -> None:
         """
         Executes the entire ETL pipeline.

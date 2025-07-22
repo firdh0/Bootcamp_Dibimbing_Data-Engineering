@@ -10,9 +10,17 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001; 
 
+// Middleware to enable Cross-Origin Resource Sharing (CORS) from the frontend
 app.use(cors({ origin: 'http://localhost:3000' })); 
+// Middleware to parse incoming request bodies in JSON format
 app.use(express.json()); 
 
+
+/**
+ * @description BigQuery client instance to interact with Google Cloud.
+ * Configured using the Project ID from environment variables.
+ * @type {BigQuery}
+ */
 const bigquery = new BigQuery({
   projectId: process.env.BIGQUERY_PROJECT_ID, 
 });
@@ -20,7 +28,13 @@ const bigquery = new BigQuery({
 console.log(`Backend API akan terhubung ke BigQuery Project: ${process.env.BIGQUERY_PROJECT_ID}`);
 console.log(`BigQuery Dataset: ${process.env.BIGQUERY_DATASET_ID}`);
 
-// === Endpoint API untuk Mengambil Data Ulasan per Tanggal ===
+
+/**
+ * @route GET /api/reviews-by-date
+ * @description Fetches time series data for the number of reviews per day.
+ * @returns {object[]} 200 - An array of objects, each with a `date` and `review_count`.
+ * @returns {object} 500 - Error object if the query fails.
+ */
 app.get('/api/reviews-by-date', async (req, res) => {
   const query = `
     SELECT
@@ -51,7 +65,14 @@ app.get('/api/reviews-by-date', async (req, res) => {
   }
 });
 
-// === Endpoint API untuk 1. Promosi dengan Penghematan Terbesar ===
+
+/**
+ * @route GET /api/greatest-savings-promos
+ * @description Fetches the top 20 active promotions with the highest potential monetary savings.
+ * Potential savings are calculated based on the average menu price at the respective restaurant.
+ * @returns {object[]} 200 - An array of promotion objects, sorted by potential savings.
+ * @returns {object} 500 - Error object if the query fails.
+ */
 app.get('/api/greatest-savings-promos', async (req, res) => {
     const query = `
         SELECT
@@ -102,7 +123,14 @@ app.get('/api/greatest-savings-promos', async (req, res) => {
     }
 });
 
-// === Endpoint API untuk 2. Pola Distribusi Harga & Restoran Termurah ===
+
+/**
+ * @route GET /api/cheapest-restaurants
+ * @description Finds the cheapest restaurant for specific menu categories in each city.
+ * @param {string} [req.query.categories] - Optional comma-separated string of menu categories to search for. Defaults to 'ayam geprek', 'kopi susu', 'nasi padang'.
+ * @returns {object[]} 200 - An array of objects containing the cheapest restaurant for each menu item and city.
+ * @returns {object} 500 - Error object if the query fails.
+ */
 app.get('/api/cheapest-restaurants', async (req, res) => {
     const categories = req.query.categories ? req.query.categories.split(',') : ['ayam geprek', 'kopi susu', 'nasi padang']; 
     const query = `
@@ -173,7 +201,13 @@ app.get('/api/cheapest-restaurants', async (req, res) => {
     }
 });
 
-// === Endpoint API untuk 3. Korelasi Rating dengan Harga dan Promosi ===
+
+/**
+ * @route GET /api/rating-correlation-data
+ * @description Gathers aggregated data per restaurant for correlation analysis between ratings, average prices, and the number of active promotions.
+ * @returns {object[]} 200 - An array of restaurant objects with their aggregate metrics.
+ * @returns {object} 500 - Error object if the query fails.
+ */
 app.get('/api/rating-correlation-data', async (req, res) => {
     const query = `
         WITH RestaurantAggregates AS (
@@ -232,7 +266,17 @@ app.get('/api/rating-correlation-data', async (req, res) => {
     }
 });
 
-// === Endpoint API Baru: Rekomendasi "Best Value" berdasarkan Budget ===
+
+/**
+ * @route GET /api/best-value-recommendations
+ * @description Provides "best value" menu recommendations based on a user's budget and optional food category.
+ * It calculates the effective price after applying the best available discount and filters results that fit the budget.
+ * @param {number} req.query.budget - The user's maximum budget as a number.
+ * @param {string} [req.query.category] - Optional food category to filter results.
+ * @returns {object[]} 200 - An array of recommended menu objects, sorted by price, rating, and savings.
+ * @returns {object} 400 - Error if the `budget` parameter is invalid.
+ * @returns {object} 500 - Error object if the query fails.
+ */
 app.get('/api/best-value-recommendations', async (req, res) => {
     const userBudget = parseFloat(req.query.budget); 
     const foodCategory = req.query.category || null; 
@@ -367,7 +411,9 @@ app.get('/api/best-value-recommendations', async (req, res) => {
 });
 
 
-// Server mulai mendengarkan request
+/**
+ * @description Starts the Express server and listens for incoming connections on the specified port.
+ */
 app.listen(port, () => {
   console.log(`Backend API berjalan di http://localhost:${port}`);
 });

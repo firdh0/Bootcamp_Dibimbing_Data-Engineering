@@ -4,21 +4,27 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 
 
+/**
+ * The main application component.
+ * It manages user authentication state and conditionally renders either the
+ * Login page or the main Dashboard.
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
 
+  
   /**
-   * Manages the user's authentication state.
-   * `isAuthenticated` is `true` if the user is logged in, and `false` otherwise.
+   * @description State to track whether the user is authenticated.
+   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
    */
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+
   /**
-   * Handles the login process.
-   * Checks if the provided username and password match the hardcoded credentials.
-   * If they match, it sets `isAuthenticated` to `true` and shows a success alert.
-   * If they don't match, it shows a failure alert.
-   * username - The username entered by the user.
-   * password - The password entered by the user.
+   * Handles the login attempt by validating user credentials.
+   * NOTE: This uses hardcoded credentials for demonstration purposes only.
+   * @param {string} username - The username entered by the user.
+   * @param {string} password - The password entered by the user.
    */
   const handleLogin = (username, password) => {
     if (username === 'admin' && password === 'admin123') {
@@ -29,9 +35,9 @@ function App() {
     }
   };
 
+
   /**
-   * Handles the logout process.
-   * Sets `isAuthenticated` to `false` and displays a success alert.
+   * Handles the logout process by resetting the authentication state.
    */
   const handleLogout = () => {
     setIsAuthenticated(false);

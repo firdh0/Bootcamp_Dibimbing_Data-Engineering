@@ -6,6 +6,7 @@ from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOpe
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator 
 from docker.types import Mount
+from send_notification_to_email import send_dag_notification
 
 GCS_BUCKET = "gofood-data-lake-bucket"
 SILVER_GCS_PATH = "silver"
@@ -23,6 +24,8 @@ run_date_str_only_date = "{{ dag_run.conf.get('run_date_str_only_date', '') }}"
     schedule=None,
     start_date=pendulum.datetime(2025, 8, 31, tz="Asia/Jakarta"), 
     catchup=True, 
+    on_success_callback=send_dag_notification,
+    on_failure_callback=send_dag_notification,
     tags=["gofood", "load", "medallion", "gold", "cloud storage", "bigquery"],
     doc_md="""
     ### GoFood ETL Pipeline with Medallion Architecture on GCS

@@ -20,7 +20,6 @@ run_date_str_only_date = "{{ dag_run.conf.get('run_date_str_only_date', '') }}"
 
 @dag(
     dag_id="gofood_medallion_load_pipeline",
-    # schedule="0 8-9 * * *",
     schedule=None,
     start_date=pendulum.datetime(2025, 8, 31, tz="Asia/Jakarta"), 
     catchup=True, 
@@ -32,18 +31,13 @@ run_date_str_only_date = "{{ dag_run.conf.get('run_date_str_only_date', '') }}"
     """
 )
 def gofood_load_dag() -> None:
+    
     append_tables = {
         "fact_transaction": {"id_column": "TransactionID"},
         "dim_date": {"id_column": "id_time"} 
     }
 
-    merge_tables = {
-        "dim_restaurant": {"business_key": "name", "id_column": "id_restaurant"},
-        "dim_menu": {"business_key": "name", "id_column": "id_menu"},
-        "dim_promotion": {"business_key": "name", "id_column": "id_promo"} 
-    }
-
-    load_append_tables_tasks = []
+    load_append_tables_tasks = [] 
     for table_name, details in append_tables.items():
         load_task = GCSToBigQueryOperator(
             task_id=f"load_{table_name}_to_bigquery",
@@ -52,26 +46,18 @@ def gofood_load_dag() -> None:
             destination_project_dataset_table=f"{BIGQUERY_PROJECT_ID}.{BIGQUERY_DATASET_ID}.{table_name}",
             source_format="PARQUET",
             create_disposition="CREATE_IF_NEEDED", 
-            write_disposition="WRITE_APPEND", 
+            write_disposition="WRITE_APPEND",
             autodetect=True, 
             gcp_conn_id="gcp_connection",
         )
         load_append_tables_tasks.append(load_task)
 
-    initialize_merge_tables_tasks = []
-    for table_name, details in merge_tables.items():
-        init_task = GCSToBigQueryOperator(
-            task_id=f"initialize_{table_name}_table",
-            bucket=GCS_BUCKET,
-            source_objects=[f"{SILVER_GCS_PATH}/{run_datetime_str_full}/{table_name}/*.parquet"],
-            destination_project_dataset_table=f"{BIGQUERY_PROJECT_ID}.{BIGQUERY_DATASET_ID}.{table_name}",
-            source_format="PARQUET",
-            create_disposition="CREATE_IF_NEEDED",
-            write_disposition="WRITE_TRUNCATE", 
-            autodetect=True,
-            gcp_conn_id="gcp_connection",
-        )
-        initialize_merge_tables_tasks.append(init_task)
+
+    merge_tables = {
+        "dim_restaurant": {"business_key": "name", "id_column": "id_restaurant"},
+        "dim_menu": {"business_key": "name", "id_column": "id_menu"},
+        "dim_promotion": {"business_key": "name", "id_column": "id_promo"} 
+    }
 
     actual_merge_tasks = []
     for table_name, details in merge_tables.items():
@@ -175,7 +161,7 @@ def gofood_load_dag() -> None:
         actual_merge_task = BigQueryInsertJobOperator(
             task_id=f"merge_{table_name}_table",
             project_id=BIGQUERY_PROJECT_ID, 
-            location="asia-southeast2",
+            location="asia-southeast2", 
             configuration={ 
                 "query": {
                     "query": merge_sql,
@@ -183,15 +169,15 @@ def gofood_load_dag() -> None:
                     "jobReference": { 
                         "projectId": BIGQUERY_PROJECT_ID,
                         "jobId": f"bq_merge_job_{{{{ dag_run.id }}}}_{{{{ task.task_id }}}}_{table_name}",
-                        "location": "asia-southeast2",
+                        "location": "asia-southeast2", 
                     },
                     "timeoutMs": 3600 * 1000, 
                 }
             },
             gcp_conn_id="gcp_connection",
         )
-        actual_merge_tasks.append((load_to_staging, actual_merge_task))
-
+        
         load_to_staging >> actual_merge_task
+        actual_merge_tasks.append((load_to_staging, actual_merge_task))
 
 gofood_load_dag()

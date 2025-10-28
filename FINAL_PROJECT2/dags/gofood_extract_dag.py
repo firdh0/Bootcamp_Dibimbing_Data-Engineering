@@ -4,6 +4,7 @@ from airflow.decorators import dag
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from docker.types import Mount
+from send_notification_to_email import send_dag_notification
 
 GCS_BUCKET = "gofood-data-lake"
 BRONZE_GCS_PATH = "bronze"
@@ -23,10 +24,10 @@ scraper_command = (
 
 @dag(
     dag_id="gofood_medallion_extract_pipeline",
-    # schedule="0 8-9 * * *",
     schedule=None,
     start_date=None, 
-    # start_date=pendulum.datetime(2025, 8, 31, tz="Asia/Jakarta"), 
+    on_success_callback=send_dag_notification,
+    on_failure_callback=send_dag_notification,
     catchup=True, 
     tags=["gofood", "transform", "medallion", "bronze", "cloud storage"],
     doc_md="""
@@ -57,14 +58,14 @@ def gofood_extract_dag() -> None:
         shm_size=f"{5}g"
     )
 
-    # trigger_transform_dag = TriggerDagRunOperator(
-    #     task_id="trigger_transform_to_silver_dag",
-    #     trigger_dag_id="gofood_medallion_transform_pipeline",  
-    #     wait_for_completion = True,
-    #     poke_interval       = 5,
-    #     conf={"run_datetime_str_full": run_datetime_str_full} 
-    # )
+    trigger_transform_dag = TriggerDagRunOperator(
+        task_id="trigger_transform_to_silver_dag",
+        trigger_dag_id="gofood_medallion_transform_pipeline",  
+        wait_for_completion = True,
+        poke_interval       = 5,
+        conf={"run_datetime_str_full": run_datetime_str_full} 
+    )
 
-    # extract_to_bronze >> trigger_transform_dag
+    extract_to_bronze >> trigger_transform_dag
 
 gofood_extract_dag()

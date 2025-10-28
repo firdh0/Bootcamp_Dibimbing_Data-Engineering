@@ -3,6 +3,7 @@ import pendulum
 from airflow.decorators import dag
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
+from send_notification_to_email import send_dag_notification
 
 GCS_BUCKET = "gofood-data-lake-bucket"
 BRONZE_GCS_PATH = "bronze"
@@ -18,10 +19,11 @@ run_date_str_only_date = "{{ macros.datetime.strptime(dag_run.conf.get('run_date
 
 @dag(
     dag_id="gofood_medallion_transform_pipeline",
-    # schedule="0 8-9 * * *",
     schedule=None,
     start_date=pendulum.datetime(2025, 8, 31, tz="Asia/Jakarta"), 
     catchup=True, 
+    on_success_callback=send_dag_notification,
+    on_failure_callback=send_dag_notification,
     tags=["gofood", "transform", "medallion", "silver", "cloud storage", "spark", "bigquery"],
     doc_md="""
     ### GoFood ETL Pipeline with Medallion Architecture on GCS
